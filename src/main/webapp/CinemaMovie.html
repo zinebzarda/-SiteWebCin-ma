@@ -14,9 +14,9 @@
         <!-- BOX ICONS  -->
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
-<body class="body-home">
+<body>
     <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg py-0" style="height: 50px;">
+    <nav class="navbar nav-movie fixed-top navbar-expand-lg py-0" style="height: 50px;">
         <div class="container">
             <img class="navbar-brand me-auto" style="width: 40px" src="images/logo.png">
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -45,22 +45,23 @@
                 </div>
                 
             </div>
-
-            <a href="" class="btn btn-danger text-light border border-0 px-3 py-1 rounded mx-4">Log in</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <div class="search">
+                <form action="">
+                    <li class="nav-link search-bar active rounded col-10">
+                        <input class="search col-10 text-light bg-slight border border-0 px-3 py-1 rounded" id="search" type="text" placeholder="Search for movie...">
+                        <i style="color: white;" onclick="searchWeather()" class="bx bx-search-alt icon rounded"></i>
+                    </li>
+                </form>
+            </div>
+            <i class='bx bx-user bx-flip-horizontal icon rounded' style='color:white'  ></i>            
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
     </nav>
-    <section class="home text-light ">
-        <h1 class="my-5">UNLIMITED CINIMATIC EXPERIENCE WITH MEGAMARA</h1>
-        <h5 class="my-3">Enjoy movies, series, and much more, wherever you are. </h5>
-        <p class="my-3">Sign up now to access a limitless cinematic experience!</p>
-        <div class="get-started ">
-            
-            <input class="rounded mx-2" type="email" placeholder="Enter your email">
-            <button class="rounded btn btn-danger mx-2">Subscribe Now</button>
-        </div>
+    <section class="movie-trend">
+
+        
     </section>
 
 

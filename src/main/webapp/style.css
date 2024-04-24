@@ -9,27 +9,39 @@ a{
     text-decoration: none;
 }
 body{
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    background: url(images/background.jpg) no-repeat top right/cover; 
-    
+
+}
+.body-home{
+    background: url(images/bg1.jpg) no-repeat top right/cover; 
+    background-size: cover;
+    transition: background-image 1s ease;
 }
 nav{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 10px 70px;
-    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 50px;
+    background: rgba(0, 0, 0, 0.6);
     text-align: center;
     align-items: center;
     position: fixed;
     backdrop-filter: blur(10px);
 }
+.nav-movie{
+    background: linear-gradient(180deg, #250101 0%, rgba(80, 2, 2, 0) 100%);
 
+}
 .home{
+    padding-top: 15%;
     text-align: center;
-    position: relative;
-    top: 60%;
+    align-content: center;
+}
+.get-started{
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
 }
 .get-started input{
     padding: 10px 20px;
@@ -43,4 +55,10 @@ nav{
     height: 45px;
     padding: 10px 10px;
     border: none;
+}
+.icon{
+    padding: 7px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 0, 0, 0.792); 
 }
