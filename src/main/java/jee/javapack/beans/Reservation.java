@@ -3,33 +3,41 @@ package jee.javapack.beans;
 import java.util.Date;
 
 public class Reservation {
-    private int idReservation;
-    private int idUtilisateur;
-    private int idFilm;
+    private Integer idReservation;
+    private Integer idUser;
+    private Integer idFilm;
     private Date dateReservation;
-    private int nombreBillets;
+    private Integer numberBillets;
 
-    public int getIdReservation() {
+    public Reservation(Integer idReservation, Integer idUser, Integer idFilm, Date dateReservation, Integer numberBillets) {
+        this.idReservation = idReservation;
+        this.idUser = idUser;
+        this.idFilm = idFilm;
+        this.dateReservation = dateReservation;
+        this.numberBillets = numberBillets;
+    }
+
+    public Integer getIdReservation() {
         return idReservation;
     }
 
-    public void setIdReservation(int idReservation) {
+    public void setIdReservation(Integer idReservation) {
         this.idReservation = idReservation;
     }
 
-    public int getIdUtilisateur() {
-        return idUtilisateur;
+    public Integer getIdUser() {
+        return idUser;
     }
 
-    public void setIdUtilisateur(int idUtilisateur) {
-        this.idUtilisateur = idUtilisateur;
+    public void setIdUser(Integer idUser) {
+        this.idUser = idUser;
     }
 
-    public int getIdFilm() {
+    public Integer getIdFilm() {
         return idFilm;
     }
 
-    public void setIdFilm(int idFilm) {
+    public void setIdFilm(Integer idFilm) {
         this.idFilm = idFilm;
     }
 
@@ -41,11 +49,11 @@ public class Reservation {
         this.dateReservation = dateReservation;
     }
 
-    public int getNombreBillets() {
-        return nombreBillets;
+    public Integer getNumberBillets() {
+        return numberBillets;
     }
 
-    public void setNombreBillets(int nombreBillets) {
-        this.nombreBillets = nombreBillets;
+    public void setNumberBillets(Integer numberBillets) {
+        this.numberBillets = numberBillets;
     }
 }

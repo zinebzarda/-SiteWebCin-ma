@@ -1,69 +1,89 @@
 package jee.javapack.beans;
 
-public class Film {
-    private int idFilm;
-    private String titre;
-    private String description;
-    private int duree;
-    private String genre;
-    private int annee;
-    private String imageURL;
+import java.sql.Date;
 
-    // Getters
-    public int getIdFilm() {
+public class Film {
+    private Integer idFilm;
+    private String titleFilm;
+    private String descriptionFilm;
+    private Integer runTimeFilm;
+    private String genreFilm;
+    private Date producedIn;
+    private String directedBy;
+    private String pictureURL;
+
+    public Film(Integer idFilm, String titleFilm, String descriptionFilm, Integer runTimeFilm, String genreFilm, Date producedIn, String directedBy, String pictureURL) {
+        this.idFilm = idFilm;
+        this.titleFilm = titleFilm;
+        this.descriptionFilm = descriptionFilm;
+        this.runTimeFilm = runTimeFilm;
+        this.genreFilm = genreFilm;
+        this.producedIn = producedIn;
+        this.directedBy = directedBy;
+        this.pictureURL = pictureURL;
+    }
+
+    public Integer getIdFilm() {
         return idFilm;
     }
 
-    public String getTitre() {
-        return titre;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public int getDuree() {
-        return duree;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public int getAnnee() {
-        return annee;
-    }
-
-    public String getImageURL() {
-        return imageURL;
-    }
-
-    // Setters
-    public void setIdFilm(int idFilm) {
+    public void setIdFilm(Integer idFilm) {
         this.idFilm = idFilm;
     }
 
-    public void setTitre(String titre) {
-        this.titre = titre;
+    public String getTitleFilm() {
+        return titleFilm;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setTitleFilm(String titleFilm) {
+        this.titleFilm = titleFilm;
     }
 
-    public void setDuree(int duree) {
-        this.duree = duree;
+    public String getDescriptionFilm() {
+        return descriptionFilm;
     }
 
-    public void setGenre(String genre) {
-        this.genre = genre;
+    public void setDescriptionFilm(String descriptionFilm) {
+        this.descriptionFilm = descriptionFilm;
     }
 
-    public void setAnnee(int annee) {
-        this.annee = annee;
+    public Integer getRunTimeFilm() {
+        return runTimeFilm;
     }
 
-    public void setImageURL(String imageURL) {
-        this.imageURL = imageURL;
+    public void setRunTimeFilm(Integer runTimeFilm) {
+        this.runTimeFilm = runTimeFilm;
+    }
+
+    public String getGenreFilm() {
+        return genreFilm;
+    }
+
+    public void setGenreFilm(String genreFilm) {
+        this.genreFilm = genreFilm;
+    }
+
+    public Date getProducedIn() {
+        return producedIn;
+    }
+
+    public void setProducedIn(Date producedIn) {
+        this.producedIn = producedIn;
+    }
+
+    public String getDirectedBy() {
+        return directedBy;
+    }
+
+    public void setDirectedBy(String directedBy) {
+        this.directedBy = directedBy;
+    }
+
+    public String getPictureURL() {
+        return pictureURL;
+    }
+
+    public void setPictureURL(String pictureURL) {
+        this.pictureURL = pictureURL;
     }
 }
