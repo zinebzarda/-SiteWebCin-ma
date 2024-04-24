@@ -2,6 +2,7 @@ package jee.javapack.beans;
 
 import java.sql.Date;
 
+
 public class Film {
     private Integer idFilm;
     private String titleFilm;
