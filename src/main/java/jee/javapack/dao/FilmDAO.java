@@ -8,4 +8,5 @@ import java.util.ArrayList;
 public interface FilmDAO {
     ArrayList<Film> SearchFilms(String Title) throws SQLException, ClassNotFoundException;
     ArrayList<Film> getAllFilms() throws SQLException, ClassNotFoundException;
+
 }
