@@ -1,12 +1,10 @@
 package jee.javapack.servlets;
-
 import jee.javapack.beans.Film;
 import jee.javapack.beans.Reservation;
 import jee.javapack.dao.FilmDAO;
 import jee.javapack.dao.FilmDAOImpl;
 import jee.javapack.dao.ReservationDAO;
 import jee.javapack.dao.ReservationDAOImpl;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +22,7 @@ public class DisplayServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        // Retrieve all films from the database
+
         List<Film> films = filmDAO.getAllFilms();
         request.setAttribute("films", films);
 
