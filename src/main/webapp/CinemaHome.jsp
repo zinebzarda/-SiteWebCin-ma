@@ -35,7 +35,7 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                     <li class="nav-item active-menu">
-                        <a class="nav-link text-light mx-lg-2 mx-4" href="#">ShowTimes</a>
+                        <a class="nav-link text-light mx-lg-2 mx-4" href="/Magerama_cinema_BM_war_exploded/display">ShowTimes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light mx-lg-2 mx-4" href="#">Films</a>
@@ -119,21 +119,24 @@
     </div>
     <div class="row">
         <div  class="col-md-4">
+            <c:forEach var="film" items="${films}">
             <article style="margin-top: 60px; margin-bottom: 40px;" class="cardss">
-                <img class="card__background" src="images/game-of-thrones.jpg" alt=""/>
+
+                <img class="card__background" src="${film.pictureURL}" alt=""/>
                 <div class="card__content | flow">
                     <div class="card__content--container | flow">
-                        <h2 class="card__title">Game of thrones</h2>
-                        <p class="card__description">
-                            Nine noble families vie for control of the Iron Throne in the
-                            seven kingdoms of Westeros. Meanwhile, ancient, forgotten mythical creatures return to wreak havoc.
-                        </p>
+                        <h2 class="card__title">${film.titleFilm}</h2>
+                        <p class="card__description">${film.descriptionFilm}</p>
                     </div>
                     <button class="btn card__button text-light mt-2 rounded align-items-center">Book <i class='bx bxs-coupon' style='color:#ffffff; margin-left: 5px;'></i></button>
                 </div>
+
             </article>
+            </c:forEach>
         </div>
     </div>
+
+
 
 </section>
 

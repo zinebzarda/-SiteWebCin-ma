@@ -4,19 +4,19 @@ import java.sql.Date;
 
 
 public class Film {
-    private Integer idFilm;
+    private int idFilm;
     private String titleFilm;
     private String descriptionFilm;
-    private Integer runTimeFilm;
+    private int runTimeFilm;
     private String genreFilm;
-    private Date producedIn;
+    private int producedIn;
     private String directedBy;
     private String pictureURL;
     private String backgroundURL;
     private String ratingFilm;
     private Date streamingNow;
 
-    public Film(Integer idFilm, String titleFilm, String descriptionFilm, Integer runTimeFilm, String genreFilm, Date producedIn, String directedBy, String pictureURL, String backgroundURL, String ratingFilm, Date streamingNow) {
+    public Film(int idFilm, String titleFilm, String descriptionFilm, int runTimeFilm, String genreFilm, int producedIn, String directedBy, String pictureURL, String backgroundURL, String ratingFilm, Date streamingNow) {
         this.idFilm = idFilm;
         this.titleFilm = titleFilm;
         this.descriptionFilm = descriptionFilm;
@@ -30,11 +30,13 @@ public class Film {
         this.streamingNow = streamingNow;
     }
 
-    public Integer getIdFilm() {
+    public Film() {}
+
+    public int getIdFilm() {
         return idFilm;
     }
 
-    public void setIdFilm(Integer idFilm) {
+    public void setIdFilm(int idFilm) {
         this.idFilm = idFilm;
     }
 
@@ -58,7 +60,7 @@ public class Film {
         return runTimeFilm;
     }
 
-    public void setRunTimeFilm(Integer runTimeFilm) {
+    public void setRunTimeFilm(int runTimeFilm) {
         this.runTimeFilm = runTimeFilm;
     }
 
@@ -70,11 +72,11 @@ public class Film {
         this.genreFilm = genreFilm;
     }
 
-    public Date getProducedIn() {
+    public int getProducedIn() {
         return producedIn;
     }
 
-    public void setProducedIn(Date producedIn) {
+    public void setProducedIn(int producedIn) {
         this.producedIn = producedIn;
     }
 
