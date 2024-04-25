@@ -52,8 +52,8 @@ public class FilmDAOImpl implements FilmDAO{
 
 
     @Override
-    public List<Film> getAllFilms() {
-        List<Film> films = new ArrayList<>();
+    public ArrayList<Film> getAllFilms() {
+        ArrayList<Film> films = new ArrayList<>();
 
         try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
              PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Film");

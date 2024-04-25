@@ -15,7 +15,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>CinemaHome</servlet-name>
-        <url-pattern>/movie</url-pattern>
+        <url-pattern>/cinema-home</url-pattern>
     </servlet-mapping>
 
 
