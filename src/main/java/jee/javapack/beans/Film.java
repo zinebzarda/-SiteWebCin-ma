@@ -11,8 +11,11 @@ public class Film {
     private Date producedIn;
     private String directedBy;
     private String pictureURL;
+    private String backgroundURL;
+    private String ratingFilm;
+    private Date streamingNow;
 
-    public Film(Integer idFilm, String titleFilm, String descriptionFilm, Integer runTimeFilm, String genreFilm, Date producedIn, String directedBy, String pictureURL) {
+    public Film(Integer idFilm, String titleFilm, String descriptionFilm, Integer runTimeFilm, String genreFilm, Date producedIn, String directedBy, String pictureURL, String backgroundURL, String ratingFilm, Date streamingNow) {
         this.idFilm = idFilm;
         this.titleFilm = titleFilm;
         this.descriptionFilm = descriptionFilm;
@@ -21,6 +24,9 @@ public class Film {
         this.producedIn = producedIn;
         this.directedBy = directedBy;
         this.pictureURL = pictureURL;
+        this.backgroundURL = backgroundURL;
+        this.ratingFilm = ratingFilm;
+        this.streamingNow = streamingNow;
     }
 
     public Integer getIdFilm() {
@@ -31,20 +37,20 @@ public class Film {
         this.idFilm = idFilm;
     }
 
-    public String getTitleFilm() {
-        return titleFilm;
-    }
-
-    public void setTitleFilm(String titleFilm) {
-        this.titleFilm = titleFilm;
-    }
-
     public String getDescriptionFilm() {
         return descriptionFilm;
     }
 
     public void setDescriptionFilm(String descriptionFilm) {
         this.descriptionFilm = descriptionFilm;
+    }
+
+    public String getTitleFilm() {
+        return titleFilm;
+    }
+
+    public void setTitleFilm(String titleFilm) {
+        this.titleFilm = titleFilm;
     }
 
     public Integer getRunTimeFilm() {
@@ -85,5 +91,29 @@ public class Film {
 
     public void setPictureURL(String pictureURL) {
         this.pictureURL = pictureURL;
+    }
+
+    public String getBackgroundURL() {
+        return backgroundURL;
+    }
+
+    public void setBackgroundURL(String backgroundURL) {
+        this.backgroundURL = backgroundURL;
+    }
+
+    public String getRatingFilm() {
+        return ratingFilm;
+    }
+
+    public void setRatingFilm(String ratingFilm) {
+        this.ratingFilm = ratingFilm;
+    }
+
+    public Date getStreamingNow() {
+        return streamingNow;
+    }
+
+    public void setStreamingNow(Date streamingNow) {
+        this.streamingNow = streamingNow;
     }
 }
