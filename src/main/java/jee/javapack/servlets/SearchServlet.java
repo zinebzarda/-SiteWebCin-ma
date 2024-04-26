@@ -17,11 +17,11 @@ public class SearchServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String titleFilm =request.getParameter("titleFilm");
+       String titleFilm =request.getParameter("titleFilm");
         FilmDAOImpl serachfilm=new FilmDAOImpl();
 
         try {
-            request.setAttribute("filmSe",serachfilm.SearchFilms(titleFilm));
+            request.setAttribute("films",serachfilm.SearchFilms(titleFilm));
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
