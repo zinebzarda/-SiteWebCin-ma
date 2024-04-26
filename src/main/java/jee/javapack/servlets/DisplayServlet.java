@@ -29,7 +29,10 @@ public class DisplayServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             List<Film> films = filmDAO.getAllFilms();
+
             request.setAttribute("films", films);
+        System.out.println("jhgmkppmlkjhgjhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
+
         request.getRequestDispatcher("/WEB-INF/CinemaHome.jsp").forward(request, response);
     }
 }
