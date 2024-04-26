@@ -17,7 +17,9 @@ public class CinemaHome extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Film> films = filmDAO.getAllFilms();
         request.setAttribute("films", films);
+        System.out.println(films);
         request.getRequestDispatcher("/CinemaHome.jsp").forward(request, response);
+
     }
 
     @Override

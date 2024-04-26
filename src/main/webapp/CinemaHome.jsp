@@ -110,6 +110,7 @@
                 </div>
             </div>
         </div>
+    </div>
 </section>
 <section  class="showtimes" style="height: 100vh; width: 100%; background-color: black; padding-top: 40px; padding-left: 50px;" >
     <p style="font-size: 20px; text-align: start; font-weight: bold;" class="text-light">ShowTimes</p>
@@ -118,8 +119,9 @@
         <a style="margin-left: 20px; font-weight: 500;" href="">Cooming Soon !</a>
     </div>
     <div class="row">
+        <c:forEach var="film" items="${films}">
         <div  class="col-md-4">
-            <c:forEach var="film" items="${films}">
+
             <article style="margin-top: 60px; margin-bottom: 40px;" class="cardss">
 
                 <img class="card__background" src="${film.pictureURL}" alt=""/>
@@ -132,8 +134,9 @@
                 </div>
 
             </article>
-            </c:forEach>
+
         </div>
+        </c:forEach>
     </div>
 
 

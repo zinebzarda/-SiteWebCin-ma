@@ -4,19 +4,19 @@ import java.sql.Date;
 
 
 public class Film {
-    private int idFilm;
+    private Integer idFilm;
     private String titleFilm;
     private String descriptionFilm;
-    private int runTimeFilm;
+    private Integer runTimeFilm;
     private String genreFilm;
-    private int producedIn;
+    private Date producedIn;
     private String directedBy;
     private String pictureURL;
     private String backgroundURL;
     private String ratingFilm;
     private Date streamingNow;
 
-    public Film(int idFilm, String titleFilm, String descriptionFilm, int runTimeFilm, String genreFilm, int producedIn, String directedBy, String pictureURL, String backgroundURL, String ratingFilm, Date streamingNow) {
+    public Film(Integer idFilm, String titleFilm, String descriptionFilm, Integer runTimeFilm, String genreFilm, Date producedIn, String directedBy, String pictureURL, String backgroundURL, String ratingFilm, Date streamingNow) {
         this.idFilm = idFilm;
         this.titleFilm = titleFilm;
         this.descriptionFilm = descriptionFilm;
@@ -72,11 +72,11 @@ public class Film {
         this.genreFilm = genreFilm;
     }
 
-    public int getProducedIn() {
+    public Date getProducedIn() {
         return producedIn;
     }
 
-    public void setProducedIn(int producedIn) {
+    public void setProducedIn(Date producedIn) {
         this.producedIn = producedIn;
     }
 
@@ -118,5 +118,22 @@ public class Film {
 
     public void setStreamingNow(Date streamingNow) {
         this.streamingNow = streamingNow;
+    }
+
+    @Override
+    public String toString() {
+        return "Film{" +
+                "idFilm=" + idFilm +
+                ", titleFilm='" + titleFilm + '\'' +
+                ", descriptionFilm='" + descriptionFilm + '\'' +
+                ", runTimeFilm=" + runTimeFilm +
+                ", genreFilm='" + genreFilm + '\'' +
+                ", producedIn=" + producedIn +
+                ", directedBy='" + directedBy + '\'' +
+                ", pictureURL='" + pictureURL + '\'' +
+                ", backgroundURL='" + backgroundURL + '\'' +
+                ", ratingFilm='" + ratingFilm + '\'' +
+                ", streamingNow=" + streamingNow +
+                '}';
     }
 }

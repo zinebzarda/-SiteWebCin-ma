@@ -1,9 +1,5 @@
 package jee.javapack.dao;
-
 import jee.javapack.beans.Film;
-
-
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -46,12 +42,12 @@ public class FilmDAOImpl implements FilmDAO {
             while (resultSet.next()) {
                 Film film = new Film();
                 film.setIdFilm(resultSet.getInt("idFilm"));
-                film.setTitleFilm(resultSet.getString("titre"));
-                film.setDescriptionFilm(resultSet.getString("description"));
-                film.setRunTimeFilm(resultSet.getInt("duree"));
-                film.setGenreFilm(resultSet.getString("genre"));
-                film.setProducedIn(resultSet.getInt("annee"));
-                film.setBackgroundURL(resultSet.getString("imageURL"));
+                film.setTitleFilm(resultSet.getString("titleFilm"));
+                film.setDescriptionFilm(resultSet.getString("descriptionFilm"));
+                film.setRunTimeFilm(resultSet.getInt("runTimeFilm"));
+                film.setGenreFilm(resultSet.getString("genreFilm"));
+                film.setProducedIn(resultSet.getDate("producedIn"));
+                film.setPictureURL(resultSet.getString("pictureURL"));
                 film.setStreamingNow(resultSet.getDate("streamingNow"));
                 film.setRatingFilm(resultSet.getString("ratingFilm"));
 
