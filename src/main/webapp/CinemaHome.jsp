@@ -1,4 +1,6 @@
-<%@ taglib prefix="c" uri="c"%>
+<%@ page import="jee.javapack.beans.Film" %>
+<%@ page import="java.util.List" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -9,10 +11,43 @@
 <h1><%= "Hello World!" %>
 </h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
 
 
 
+<%--<c:if test="${ not empty requestScope.films }">
+<form action="s" method="post">
+    <label for="title">Enter Movie Title:</label>
+    <input type="text" id="title" name="titleFilm">
+    <button type="submit">Search</button>
+</form>
+
+<h1>Résultats de la recherche</h1>
+
+    <c:set var="films" value="${ requestScope.films }" />
+
+    <c:if test="${ not empty films }">
+        <ul>
+            <c:forEach var="film" items="${ films }">
+                <li>
+                    <strong>Title:</strong> ${ film.titleFilm }<br>
+                    <strong>Description:</strong> ${ film.descriptionFilm }<br>
+                    <strong>Run Time Film:</strong> ${ film.runTimeFilm } minutes<br>
+                    <strong>Genre Film:</strong> ${ film.genreFilm }<br>
+                    <strong>Produced In:</strong> ${ film.producedIn }<br>
+                    <strong>Directed by:</strong> ${ film.directedBy }<br>
+                    <img src="${ film.pictureURL }" alt="Picture">
+                </li>
+            </c:forEach>
+        </ul>
+    </c:if>
+    <c:if test="${ empty films }">
+        <p>Aucun film trouvé avec ce titre.</p>
+    </c:if>
+</c:if>
+<c:if test="${ empty requestScope.films }">
+    <p>Aucun résultat à afficher.</p>
+</c:if>
+--%>
 <%--
 <div class="col-md-2 mb-2">
     <label for="title">Title :</label>

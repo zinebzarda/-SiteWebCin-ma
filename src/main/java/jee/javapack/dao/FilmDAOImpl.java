@@ -1,5 +1,7 @@
 package jee.javapack.dao;
 
+
+
 import jee.javapack.beans.Film;
 
 import java.sql.*;
@@ -7,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class FilmDAOImpl implements FilmDAO{
@@ -40,9 +43,10 @@ public class FilmDAOImpl implements FilmDAO{
 
 
 
-    @Override
-    public ArrayList<Film> getAllFilms() throws SQLException, ClassNotFoundException {
-        Connection connection = ConnectionDAO.getConnection();
-        return null;
-    }
+//    @Override
+//    public List<Film> getAllFilms() throws SQLException, ClassNotFoundException {
+//        Connection connection = ConnectionDAO.getConnection();
+//
+//        return java.util.Collections.emptyList();
+//    }
 }
