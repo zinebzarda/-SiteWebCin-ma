@@ -12,9 +12,9 @@ import java.util.List;
 public class FilmDAOImpl implements FilmDAO {
 
             @Override
-            public List<Film> getAllFilms() throws SQLException, ClassNotFoundException{
+            public ArrayList<Film> getAllFilms() throws SQLException, ClassNotFoundException{
 
-                List<Film> films = new ArrayList<>();
+                ArrayList<Film> films = new ArrayList<>();
 
                 try {
                     Connection connection = ConnectionDAO.getConnection();
