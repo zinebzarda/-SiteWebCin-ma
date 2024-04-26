@@ -97,21 +97,28 @@
 
 
 </section>
+
 <section style="height: 300px; padding-left: 50px;" class="movie-card-section">
     <div id="slider">
         <p style="font-size: 20px; text-align: start; font-weight: bold;" class="text-light">Trending Now !</p>
-        <div style="width: 98%;" class="cards row">
-            <div class="swiper">
-                <div style="" class="swiper-wrapper cards row">
-                    <div class="movie-card-trend text-white">
-                        <img style="height: 220px; width: 150px; margin-top: 20px;" class="card" src="images/game-of-thrones-2.jpg" alt="">
-                        <h1 style="font-size: 60px; font-weight: bold; opacity: 90%; z-index: 1000; margin-top: -55px; margin-left: -10px;" >1</h1>
+        <div class="d-flex flex-row">
+        <c:forEach var="film" items="${ratingFilms}" varStatus="loop">
+            <div style="width: 98%;" class="cards row">
+                <div class="swiper">
+                    <div style="" class="swiper-wrapper">
+                        <div class="movie-card-trend text-white">
+                            <img style="height: 220px; width: 150px; margin-top: 20px;" class="card" src="${film.pictureURL}" alt="${film.titleFilm}">
+                            <h1 style="font-size: 60px; font-weight: bold; opacity: 90%; z-index: 1000; margin-top: -55px; margin-left: -10px;" >${loop.index + 1}</h1>
+                        </div>
                     </div>
                 </div>
             </div>
+        </c:forEach>
         </div>
     </div>
 </section>
+
+
 <section  class="showtimes" style="height: 100vh; width: 100%; background-color: black; padding-top: 40px; padding-left: 50px;" >
     <p style="font-size: 20px; text-align: start; font-weight: bold;" class="text-light">ShowTimes</p>
     <div >
