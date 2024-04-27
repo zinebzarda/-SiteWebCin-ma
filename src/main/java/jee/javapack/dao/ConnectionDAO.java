@@ -5,13 +5,19 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionDAO {
+    private static final String jdbcURL = "jdbc:mysql://localhost:3306/megarama_bm";
+    private static final String jdbcUserName = "root";
+    private static final String jdbcPassword = "1234";
+    private static final String jdbcDriver = "com.mysql.cj.jdbc.Driver";
 
-    private static final String url = "jdbc:mysql://localhost:3306/megarama_bm";
-    private static final String username = "root";
-    private static final String password = "";
-
-    public static Connection getConnection() throws SQLException, ClassNotFoundException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        return DriverManager.getConnection(url, username, password);
+    public static Connection getConnection() throws SQLException {
+        Connection connection = null;
+        try {
+            Class.forName(jdbcDriver);
+            connection = DriverManager.getConnection(jdbcURL, jdbcUserName, jdbcPassword);
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new SQLException("error", e);
+        }
+        return connection;
     }
 }

@@ -36,7 +36,7 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                     <li class="nav-item active-menu">
-                        <a class="nav-link text-light mx-lg-2 mx-4" href="#">ShowTimes</a>
+                        <a class="nav-link text-light mx-lg-2 mx-4" href="/Magerama_cinema_BM_war_exploded/display">ShowTimes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light mx-lg-2 mx-4" href="#">Films</a>
@@ -71,47 +71,56 @@
     </div>
 </nav>
 <section class="movie-trend">
-    <img style="z-index: -1000; width: 1270px; position: absolute; top: 0; left: 0;" src="images/bg-GOT.jpg">
-    <div style="width: 40%; padding-top: 50px; padding-left: 120px;" class="text-white my-4">
-        <img style="height: 250px; width: 170px; margin: 10px 0;" class="card" src="images/game-of-thrones-1.jpg"
-             alt="">
-        <p style="font-size: 11px; text-align: start;">2h 30min - <span>July 26, 2010 - </span><span
-                style="font-weight: bold;">HBO</span></p>
-        <p style="font-size: 11px; text-align: start;"><span  class="text-success">92% Match </span><span
-                class="border rounded px-1 mx-2">TV - MA</span><span style="font-weight: bold;"
-                                                                     class="border rounded px-1 mx-1 ">HD</span><span
-                style='color:#fdb000; background: rgba(0, 0, 0, 0.6);' class="rounded border px-2 mx-1">5.1 <i
-                class='bx bxs-star' style='color:#fdb000'></i></span></p>
-        <h4 style="text-align: start;">Game Of Thrones : last fight</h4>
-        <p style="font-size: 15px; text-align: start;">Genre : Action, Drame, Fantasy</p>
-        <p style="font-size: 10px; text-align: start;">Nine noble families vie for control of the Iron Throne in the
-            seven kingdoms of Westeros. Meanwhile, ancient, forgotten mythical creatures return to wreak havoc.</p>
-        <div class="buttons text-light">
-            <button class="btn text-light mt-2">More details <i class='bx bxs-right-arrow'
-                                                                style='color:#ffffff'></i></button>
-            <button class="btn text-light mt-2">View trailer <i class='bx bxs-show'
-                                                                style='color:#ffffff'></i></button>
-            <button href="reserve-now" class="btn btn-book text-light mt-2">Book Now <i class='bx bxs-coupon'
-                                                                     style='color:#ffffff'></i></button>
+    <img style="z-index: -1000; width: 1300px; position: absolute; top: 0; left: 0;" src="images/bg-GOT.jpg">
+    <c:if test="${not empty films}">
+        <div style="width: 40%; padding-top: 50px; padding-left: 120px;" class="text-white my-4">
+            <img style="height: 250px; width: 170px; margin: 10px 0;" class="card" src="${films[0].pictureURL}" alt="${films[0].titleFilm}">
+            <p style="font-size: 11px; text-align: start;">${films[0].runTimeFilm}<span>${films[0].producedIn} </span><span
+                    style="font-weight: bold;">HBO</span></p>
+            <p style="font-size: 11px; text-align: start;"><span class="text-success">92% Match </span><span
+                    class="border rounded px-1 mx-2">TV - MA</span><span style="font-weight: bold;"
+                                                                         class="border rounded px-1 mx-1 ">HD</span><span
+                    style='color:#fdb000; background: rgba(0, 0, 0, 0.6);' class="rounded border px-2 mx-1">${films[0].ratingFilm} <i
+                    class='bx bxs-star' style='color:#fdb000'></i></span></p>
+            <h4 style="text-align: start;">${films[0].titleFilm}</h4>
+            <p style="font-size: 15px; text-align: start;">${films[0].genreFilm}</p>
+            <p style="font-size: 10px; text-align: start;">${films[0].descriptionFilm}</p>
+            <div class="buttons text-light">
+                <button class="btn text-light mt-2">More details <i class='bx bxs-right-arrow'
+                                                                    style='color:#ffffff'></i></button>
+                <button class="btn text-light mt-2">View trailer <i class='bx bxs-show'
+                                                                    style='color:#ffffff'></i></button>
+                <button class="btn btn-book text-light mt-2">Book Now <i class='bx bxs-coupon'
+                                                                         style='color:#ffffff'></i></button>
+            </div>
         </div>
-    </div>
+    </c:if>
+
 
 
 </section>
+
 <section style="height: 300px; padding-left: 50px;" class="movie-card-section">
     <div id="slider">
         <p style="font-size: 20px; text-align: start; font-weight: bold;" class="text-light">Trending Now !</p>
-        <div style="width: 98%;" class="cards row">
-            <div class="swiper">
-                <div style="" class="swiper-wrapper cards row">
-                    <div class="movie-card-trend text-white">
-                        <img style="height: 220px; width: 150px; margin-top: 20px;" class="card" src="images/game-of-thrones-2.jpg" alt="">
-                        <h1 style="font-size: 60px; font-weight: bold; opacity: 90%; z-index: 1000; margin-top: -55px; margin-left: -10px;" >1</h1>
+        <div class="d-flex flex-row">
+        <c:forEach var="film" items="${ratingFilms}" varStatus="loop">
+            <div style="width: 98%;" class="cards row">
+                <div class="swiper">
+                    <div style="" class="swiper-wrapper">
+                        <div class="movie-card-trend text-white">
+                            <img style="height: 220px; width: 150px; margin-top: 20px;" class="card" src="${film.pictureURL}" alt="${film.titleFilm}">
+                            <h1 style="font-size: 60px; font-weight: bold; opacity: 90%; z-index: 1000; margin-top: -55px; margin-left: -10px;" >${loop.index + 1}</h1>
+                        </div>
                     </div>
                 </div>
             </div>
+        </c:forEach>
         </div>
+    </div>
 </section>
+
+
 <section  class="showtimes" style="height: 100vh; width: 100%; background-color: black; padding-top: 40px; padding-left: 50px;" >
     <p style="font-size: 20px; text-align: start; font-weight: bold;" class="text-light">ShowTimes</p>
     <div >
@@ -119,22 +128,27 @@
         <a style="margin-left: 20px; font-weight: 500;" href="">Cooming Soon !</a>
     </div>
     <div class="row">
+        <c:forEach var="film" items="${films}">
         <div  class="col-md-4">
+
             <article style="margin-top: 60px; margin-bottom: 40px;" class="cardss">
-                <img class="card__background" src="images/game-of-thrones.jpg" alt=""/>
+
+                <img class="card__background" src="${film.pictureURL}" alt=""/>
                 <div class="card__content | flow">
                     <div class="card__content--container | flow">
-                        <h2 class="card__title">Game of thrones</h2>
-                        <p class="card__description">
-                            Nine noble families vie for control of the Iron Throne in the
-                            seven kingdoms of Westeros. Meanwhile, ancient, forgotten mythical creatures return to wreak havoc.
-                        </p>
+                        <h2 class="card__title">${film.titleFilm}</h2>
+                        <p class="card__description">${film.descriptionFilm}</p>
                     </div>
                     <a href="${pageContext.request.contextPath}/reserve-now" class="btn card__button text-light mt-2 rounded align-items-center">Book <i class='bx bxs-coupon' style='color:#ffffff; margin-left: 5px;'></i></a>
                 </div>
+
             </article>
+
         </div>
+        </c:forEach>
     </div>
+
+
 
 </section>
 
