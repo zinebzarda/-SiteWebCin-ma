@@ -9,7 +9,7 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <style><%@include file="css/authentication.css"%></style>
 </head>
 <body>
 <input type ="hidden" id="status" value = "<%= request.getAttribute("status") %>">
@@ -61,15 +61,10 @@
         </div>
     </div>
 </div>
-<script src="./script.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" ></script>
+<script><%@include file="js/authentication.js"%></script>
 
-<script type="text/javascript">
-    var status = document.getElementById("status").value;
-    if(status == "succes"){
-        swal("Congratulations!", "You have just created your accoutnt!", "success");
-    }
-</script>
+
+
 
 
 
