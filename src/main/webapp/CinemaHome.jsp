@@ -16,6 +16,7 @@
           integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
           crossorigin="anonymous" referrerpolicy="no-referrer">
     <!-- Css link -->
+
     <style><%@include file="css/style.css"%></style>
     <!-- BOX ICONS  -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -138,7 +139,7 @@
                         <h2 class="card__title">${film.titleFilm}</h2>
                         <p class="card__description">${film.descriptionFilm}</p>
                     </div>
-                    <button class="btn card__button text-light mt-2 rounded align-items-center">Book <i class='bx bxs-coupon' style='color:#ffffff; margin-left: 5px;'></i></button>
+                    <a href="${pageContext.request.contextPath}/reserve-now" class="btn card__button text-light mt-2 rounded align-items-center">Book <i class='bx bxs-coupon' style='color:#ffffff; margin-left: 5px;'></i></a>
                 </div>
 
             </article>

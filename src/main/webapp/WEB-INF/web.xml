@@ -17,6 +17,14 @@
         <servlet-name>CinemaHome</servlet-name>
         <url-pattern>/cinema-home</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ReserveNow</servlet-name>
+        <servlet-class>jee.javapack.servlets.ReserveNow</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReserveNow</servlet-name>
+        <url-pattern>/reserve-now</url-pattern>
+    </servlet-mapping>
 
 
 
