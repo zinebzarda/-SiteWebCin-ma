@@ -319,3 +319,43 @@ p {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(117, 3, 3, 0.78);
 }
+
+
+  .empty-cell {
+    width: 20px; /* Largeur des cellules vides */
+    height: 20px; /* Hauteur des cellules vides */
+    background-color: transparent; /* Couleur de fond transparente */
+  }
+.bx-chair{
+  margin: 4px;
+}
+
+td {
+
+  cursor: pointer;
+}
+.bx-chair{
+  z-index: -1000;
+}
+.chair-checkbox {
+  display: e  ;
+  margin-left: 6px;
+  margin-bottom: -20px;
+  z-index: 1000;
+}
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+input[type="date"]::-webkit-calendar-picker {
+  /* Rendre transparent */
+  background-color: gray;
+}
+.initial-state{
+  background-color: transparent;
+
+}
+.selected-offer {
+  background-color: rgba(2, 94, 30, 0.436);
+  border: 1px solid green;
+}
+

@@ -16,6 +16,7 @@
           integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
           crossorigin="anonymous" referrerpolicy="no-referrer">
     <!-- Css link -->
+
     <style><%@include file="css/style.css"%></style>
     <!-- BOX ICONS  -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -70,13 +71,13 @@
     </div>
 </nav>
 <section class="movie-trend">
-    <img style="z-index: -1000; width: 1300px; position: absolute; top: 0; left: 0;" src="images/bg-GOT.jpg">
+    <img style="z-index: -1000; width: 1270px; position: absolute; top: 0; left: 0;" src="images/bg-GOT.jpg">
     <div style="width: 40%; padding-top: 50px; padding-left: 120px;" class="text-white my-4">
         <img style="height: 250px; width: 170px; margin: 10px 0;" class="card" src="images/game-of-thrones-1.jpg"
              alt="">
         <p style="font-size: 11px; text-align: start;">2h 30min - <span>July 26, 2010 - </span><span
                 style="font-weight: bold;">HBO</span></p>
-        <p style="font-size: 11px; text-align: start;"><span class="text-success">92% Match </span><span
+        <p style="font-size: 11px; text-align: start;"><span  class="text-success">92% Match </span><span
                 class="border rounded px-1 mx-2">TV - MA</span><span style="font-weight: bold;"
                                                                      class="border rounded px-1 mx-1 ">HD</span><span
                 style='color:#fdb000; background: rgba(0, 0, 0, 0.6);' class="rounded border px-2 mx-1">5.1 <i
@@ -90,7 +91,7 @@
                                                                 style='color:#ffffff'></i></button>
             <button class="btn text-light mt-2">View trailer <i class='bx bxs-show'
                                                                 style='color:#ffffff'></i></button>
-            <button class="btn btn-book text-light mt-2">Book Now <i class='bx bxs-coupon'
+            <button href="reserve-now" class="btn btn-book text-light mt-2">Book Now <i class='bx bxs-coupon'
                                                                      style='color:#ffffff'></i></button>
         </div>
     </div>
@@ -129,7 +130,7 @@
                             seven kingdoms of Westeros. Meanwhile, ancient, forgotten mythical creatures return to wreak havoc.
                         </p>
                     </div>
-                    <button class="btn card__button text-light mt-2 rounded align-items-center">Book <i class='bx bxs-coupon' style='color:#ffffff; margin-left: 5px;'></i></button>
+                    <a href="${pageContext.request.contextPath}/reserve-now" class="btn card__button text-light mt-2 rounded align-items-center">Book <i class='bx bxs-coupon' style='color:#ffffff; margin-left: 5px;'></i></a>
                 </div>
             </article>
         </div>
