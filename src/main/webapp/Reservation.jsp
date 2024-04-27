@@ -55,18 +55,18 @@
     <div style="width: 100%; padding-top: 50px; padding-left: 120px; display: flex; flex-direction: row;"
          class="text-white my-4">
         <img style="height: 250px; width: 170px; margin: 10px 0;" class="card border-0"
-             src="images/game-of-thrones-1.jpg" alt="">
+             src="${Movie.getPictureURL()}" alt="">
         <div style="margin-left: 20px;">
-            <h4 class="movieTitle" style="text-align: start; padding-top: 10px;">Game Of Thrones</h4>
-            <p style="font-size: 15px; text-align: start;">Genre : Action, Drame, Fantasy</p>
-            <p style="font-size: 11px; text-align: start;">2h 30min - <span>July 26, 2010 - </span><span
-                    style="font-weight: bold;">HBO</span></p>
+            <h4 class="movieTitle" style="text-align: start; padding-top: 10px;">${Movie.getTitleFilm()}</h4>
+            <p style="font-size: 15px; text-align: start;">Genre : ${Movie.getGenreFilm()}</p>
+            <p style="font-size: 11px; text-align: start;">${Movie.getRunTimeFilm()} - <span>${Movie.getProducedIn()} - </span><span
+                    style="font-weight: bold;">${Movie.getDirectedBy()}</span></p>
             <p style="font-size: 11px; text-align: start;"><span
                     style='color:#fdb000; background: rgba(0, 0, 0, 0.6);' class="text-success rounded p-1">92%
                         Match </span><span style='background: rgba(0, 0, 0, 0.6);' class="rounded p-1 mx-1">TV -
                         MA</span><span style=' background: rgba(0, 0, 0, 0.6); font-weight: bold;'
                                        class="rounded p-1 mx-1">HD</span><span style='color:#fdb000; background: rgba(0, 0, 0, 0.6);'
-                                                                               class="rounded p-1 mx-1">5.1 <i class='bx bxs-star' style='color:#fdb000'></i></span></p>
+                                                                               class="rounded p-1 mx-1">${Movie.getRatingFilm()} <i class='bx bxs-star' style='color:#fdb000'></i></span></p>
             <div class="text-light">
                 <h5>Stream Date </h5>
                 <div style="display: flex; gap: 30px;" class="buttons">
