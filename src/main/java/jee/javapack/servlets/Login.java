@@ -32,7 +32,7 @@ public class Login extends HttpServlet {
                 session.setAttribute("login", login);
                 String role = getUserRole(login, password);
                 if ("admin".equals(role)) {
-                    response.sendRedirect("admin.jsp");
+                    request.getRequestDispatcher("/Admin.jsp").forward(request, response);
                 } else {
                     List<Film> ratingFilms = filmDAO.getHighRatedFilms();
                     request.setAttribute("ratingFilms", ratingFilms);
