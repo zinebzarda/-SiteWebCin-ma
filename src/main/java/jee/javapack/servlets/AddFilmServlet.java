@@ -20,7 +20,6 @@ public class AddFilmServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        Integer idFilm = Integer.valueOf(request.getParameter("idFilm"));
         String titleFilm = request.getParameter("titleFilm");
         String descriptionFilm = request.getParameter("descriptionFilm");
         String runTimeFilm = request.getParameter("runTimeFilm");
@@ -33,7 +32,7 @@ public class AddFilmServlet extends HttpServlet {
         String streamingNow = request.getParameter("streamingNow");
 
         FilmDAOImpl filmDao = new FilmDAOImpl();
-        Film film = new Film(idFilm, titleFilm, descriptionFilm, runTimeFilm, genreFilm, producedIn, directedBy, pictureURL, ratingFilm, backgroundURL, streamingNow);
+        Film film = new Film(null, titleFilm, descriptionFilm, runTimeFilm, genreFilm, producedIn, directedBy, pictureURL, ratingFilm, backgroundURL, streamingNow);
         try {
             filmDao.addFilms(film);
         } catch (SQLException e) {
