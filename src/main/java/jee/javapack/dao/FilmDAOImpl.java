@@ -1,10 +1,9 @@
 package jee.javapack.dao;
-
-
-
 import jee.javapack.beans.Film;
-
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,17 +28,17 @@ public class FilmDAOImpl implements FilmDAO {
                     resultSet.getString("streamingNow")
             );
             listFilm.add(film);
-
         }
     }
 
     @Override
-    public List<Film> getHighRatedFilms() {
-        List<Film> highRatedFilms = new ArrayList<>();
+    public List<Film> getAllFilms(){
+
+        List<Film> films = new ArrayList<>();
 
         try {
             Connection connection = ConnectionDAO.getConnection();
-            String query = "SELECT * FROM film WHERE ratingFilm > 4 ORDER BY ratingFilm DESC";
+            String query = "SELECT * FROM film";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -48,18 +47,19 @@ public class FilmDAOImpl implements FilmDAO {
                 film.setIdFilm(resultSet.getInt("idFilm"));
                 film.setTitleFilm(resultSet.getString("titleFilm"));
                 film.setDescriptionFilm(resultSet.getString("descriptionFilm"));
-                film.setRunTimeFilm(resultSet.getString("runTimeFilm"));
+              //  film.setRunTimeFilm(resultSet.getInt("runTimeFilm"));
                 film.setGenreFilm(resultSet.getString("genreFilm"));
                 film.setProducedIn(resultSet.getDate("producedIn"));
                 film.setPictureURL(resultSet.getString("pictureURL"));
-                film.setStreamingNow(resultSet.getString("streamingNow"));
+             //   film.setStreamingNow(resultSet.getDate("streamingNow"));
                 film.setRatingFilm(resultSet.getString("ratingFilm"));
 
-                highRatedFilms.add(film);
+                films.add(film);
             }
-        } catch (SQLException e) {
+        } catch (SQLException e){
             e.printStackTrace();
         }
+
 
         return highRatedFilms;
     }
@@ -236,4 +236,7 @@ public class FilmDAOImpl implements FilmDAO {
 
     }
 
+        return films;
+    }
+}
 

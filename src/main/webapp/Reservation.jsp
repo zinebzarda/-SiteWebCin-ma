@@ -1,4 +1,3 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%--
   Created by IntelliJ IDEA.
   User: user
@@ -56,31 +55,17 @@
     <div style="width: 100%; padding-top: 50px; padding-left: 120px; display: flex; flex-direction: row;"
          class="text-white my-4">
         <img style="height: 250px; width: 170px; margin: 10px 0;" class="card border-0"
-             src="${Movie.getPictureURL()}" alt="">
         <div style="margin-left: 20px;">
-            <h4 class="movieTitle" style="text-align: start; padding-top: 10px;">${Movie.getTitleFilm()}</h4>
-            <p style="font-size: 15px; text-align: start;">Genre : ${Movie.getGenreFilm()}</p>
-            <p style="font-size: 11px; text-align: start;">${Movie.getRunTimeFilm()} - <span>${Movie.getProducedIn()} - </span><span
-                    style="font-weight: bold;">${Movie.getDirectedBy()}</span></p>
             <p style="font-size: 11px; text-align: start;"><span
                     style='color:#fdb000; background: rgba(0, 0, 0, 0.6);' class="text-success rounded p-1">92%
                         Match </span><span style='background: rgba(0, 0, 0, 0.6);' class="rounded p-1 mx-1">TV -
                         MA</span><span style=' background: rgba(0, 0, 0, 0.6); font-weight: bold;'
                                        class="rounded p-1 mx-1">HD</span><span style='color:#fdb000; background: rgba(0, 0, 0, 0.6);'
-                                                                               class="rounded p-1 mx-1">${Movie.getRatingFilm()} <i class='bx bxs-star' style='color:#fdb000'></i></span></p>
             <div class="text-light">
                 <h5>Stream Date </h5>
                 <div style="display: flex; gap: 30px;" class="buttons">
-                    <c:forEach var="date" items="${dates}">
-                        <button style="font-size: 15px; display: flex; flex-direction: column;"
-                                class="btn px-4 py-1 text-light mt-2">
-                            <span>${date.getDay()}</span>
-                            <span style="font-size: 25px;">${date.getNumDay()}</span>
-                            <span>${date.getMonth()}</span>
-                        </button>
-                    </c:forEach>
+                    <button style="font-size: 15px; display: flex; flex-direction: column;"
                 </div>
-
                 <h5 class="mt-4">Stream Time </h5>
                 <div style="display: flex; gap: 20px;" class="">
                     <button style="font-size: 15px; display: flex; flex-direction: column; background-color: rgba(2, 94, 30, 0.436); border: 1px solid green;"
@@ -133,18 +118,10 @@
             <div style="width: 90%; height: 85%; margin-top: 50px; margin-left: 10px; border-radius: 20px; background-color: rgba(140,140,140,0.3); border: 1px solid rgba(150, 26, 26, 0.6);" class="">
                 <div style="padding-left: 50px;" class="col-10 py-2">
                     <label style="font-size: 15px;" for="date">Date</label>
-                    <input class="form-control text-light bg-dark mt-2 px-4" type="date" id="date" class="date" name="date" value="" min="${minDate}" max="${maxDate}" />
                 </div>
                 <div style="padding-left: 50px;" class="col-10 py-2">
                     <label style="font-size: 15px;" for="time">Time</label>
-                    <input class="form-control text-light bg-dark mt-2 px-4" type="time" id="time" class="time" name="time" list="hoursList" min="10:00:00" max="20:00:00">
                     <datalist id="hoursList">
-                        <option value="10:00:00"></option>
-                        <option value="12:00:00"></option>
-                        <option value="14:00:00"></option>
-                        <option value="16:00:00"></option>
-                        <option value="18:00:00"></option>
-                        <option value="20:00:00"></option>
                     </datalist>
 
                 </div>
@@ -532,12 +509,10 @@
             </div>
 
         </div>
-        <form action="reserve-now" method="post">
             <div style="height: 500px; width: 400px;" class="container">
                 <div style="width: 90%; height: 85%; margin-top: 50px; margin-left: 30px; border-radius: 20px; border: 1px solid rgba(150, 26, 26, 0.6); background-color: rgba(140,140,140,0.3)">
                     <div style="padding-left: 15px; border-bottom: 1px solid #460d0d;">
                         <p>You have selected :</p>
-                        <input type="hidden" name="idInput" class="idInput" value="${Movie.getIdFilm()}">
                     </div>
                     <div style="background-color: black; height: 340px; padding-left: 15px;">
                         <span style="color: gray; font-size: 15px;">Movie</span>
@@ -552,7 +527,6 @@
                         <div style="display: flex; gap: 30px;">
                             <div>
                                 <span style="color: gray; font-size: 15px;">Time</span>
-                                <p id="timeInput">--:--:--</p>
                                 <input type="hidden" name="timeInput" class="timeInput" value="">
                             </div>
                             <div>

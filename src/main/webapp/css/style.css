@@ -188,7 +188,7 @@ p {
   flex-direction: column;
   justify-content: space-between;
   align-self: flex-end;
-  height: 65%;
+  height: 55%;
   padding: 12% 1.25rem 1.875rem;
   background: linear-gradient(
     180deg,
@@ -318,6 +318,7 @@ p {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(117, 3, 3, 0.78);
+
 }
 
 

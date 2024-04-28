@@ -8,7 +8,6 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.List;
 
 @WebServlet(name = "CinemaHome", value = "/CinemaHome")
@@ -16,6 +15,7 @@ public class CinemaHome extends HttpServlet {
     private final FilmDAO filmDAO = new FilmDAOImpl();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         List<Film> ratingFilms = filmDAO.getHighRatedFilms();
         request.setAttribute("ratingFilms", ratingFilms);
         List<Film> films = filmDAO.getAllFilms();
@@ -27,6 +27,7 @@ public class CinemaHome extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 
         doGet(request,response);
 
