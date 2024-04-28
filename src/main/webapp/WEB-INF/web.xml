@@ -4,9 +4,10 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-
-
-
+    <display-name>/</display-name>
+    <welcome-file-list>
+        <welcome-file>authentication.jsp</welcome-file>
+    </welcome-file-list>
 
     <servlet>
         <servlet-name>CinemaHome</servlet-name>
@@ -18,33 +19,6 @@
     </servlet-mapping>
 
 
-    <servlet>
-        <servlet-name>DisplayFilms</servlet-name>
-        <servlet-class>jee.javapack.servlets.DisplayFilms</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>DisplayFilms</servlet-name>
-        <url-pattern>/shows</url-pattern>
-    </servlet-mapping>
-
-
-    <servlet>
-        <servlet-name>AddFilmServlet</servlet-name>
-        <servlet-class>jee.javapack.servlets.AddFilmServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AddFilmServlet</servlet-name>
-        <url-pattern>/addFilm</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>Authentication</servlet-name>
-        <servlet-class>jee.javapack.servlets.Authentication</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Authentication</servlet-name>
-        <url-pattern>/auth-user</url-pattern>
-    </servlet-mapping>
 
     <servlet>
         <servlet-name>SearchServlet</servlet-name>

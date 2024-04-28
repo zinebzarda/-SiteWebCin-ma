@@ -29,6 +29,7 @@
 </head>
 
 <body class="body">
+
 <!-- Navbar -->
 <nav class="navbar nav-movie fixed-top navbar-expand-lg py-0" style="height: 50px;">
     <div class="container">
