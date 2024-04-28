@@ -6,7 +6,8 @@
 
     <display-name>/</display-name>
     <welcome-file-list>
-        <welcome-file>authentication.jsp</welcome-file>
+        <welcome-file></welcome-file>
+
     </welcome-file-list>
 
     <servlet>

@@ -22,12 +22,11 @@ public class Login extends HttpServlet {
 
         try {
             boolean isValidUser = LoginDAO.validateUser(login, password);
-            System.out.println("Login Attempt: Email - " + login + ", Password - " + password);
             if (isValidUser) {
                 session.setAttribute("login", login);
                 String role = getUserRole(login, password);
                 if ("admin".equals(role)) {
-                    response.sendRedirect("admin.jsp");
+                    response.sendRedirect("Reservation.jsp");
                 } else {
                     response.sendRedirect("CinemaHome.jsp");
                 }
