@@ -318,4 +318,522 @@ p {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(117, 3, 3, 0.78);
+
 }
+
+
+         /*Admin*/
+
+/********** Template CSS **********/
+:root {
+    --primary: #EB1616;
+    --secondary: #191C24;
+    --light: #6C7293;
+    --dark: #000000;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    transition: .5s;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 50px;
+}
+
+
+/*** Layout ***/
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    height: 100vh;
+    overflow-y: auto;
+    background: var(--secondary);
+    transition: 0.5s;
+    z-index: 999;
+}
+
+.content {
+    margin-left: 250px;
+    min-height: 100vh;
+    background: var(--dark);
+    transition: 0.5s;
+}
+
+@media (min-width: 992px) {
+    .sidebar {
+        margin-left: 0;
+    }
+
+    .sidebar.open {
+        margin-left: -250px;
+    }
+
+    .content {
+        width: calc(100% - 250px);
+    }
+
+    .content.open {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .sidebar {
+        margin-left: -250px;
+    }
+
+    .sidebar.open {
+        margin-left: 0;
+    }
+
+    .content {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+
+/*** Navbar ***/
+.sidebar .navbar .navbar-nav .nav-link {
+    padding: 7px 20px;
+    color: var(--light);
+    font-weight: 500;
+    border-left: 3px solid var(--secondary);
+    border-radius: 0 30px 30px 0;
+    outline: none;
+}
+
+.sidebar .navbar .navbar-nav .nav-link:hover,
+.sidebar .navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+    background: var(--dark);
+    border-color: var(--primary);
+}
+
+.sidebar .navbar .navbar-nav .nav-link i {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark);
+    border-radius: 40px;
+}
+
+.sidebar .navbar .navbar-nav .nav-link:hover i,
+.sidebar .navbar .navbar-nav .nav-link.active i {
+    background: var(--secondary);
+}
+
+.sidebar .navbar .dropdown-toggle::after {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    transition: .5s;
+}
+
+.sidebar .navbar .dropdown-toggle[aria-expanded=true]::after {
+    transform: rotate(-180deg);
+}
+
+.sidebar .navbar .dropdown-item {
+    padding-left: 25px;
+    border-radius: 0 30px 30px 0;
+    color: var(--light);
+}
+
+.sidebar .navbar .dropdown-item:hover,
+.sidebar .navbar .dropdown-item.active {
+    background: var(--dark);
+}
+
+.content .navbar .navbar-nav .nav-link {
+    margin-left: 25px;
+    padding: 12px 0;
+    color: var(--light);
+    outline: none;
+}
+
+.content .navbar .navbar-nav .nav-link:hover,
+.content .navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+.content .navbar .sidebar-toggler,
+.content .navbar .navbar-nav .nav-link i {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark);
+    border-radius: 40px;
+}
+
+.content .navbar .dropdown-item {
+    color: var(--light);
+}
+
+.content .navbar .dropdown-item:hover,
+.content .navbar .dropdown-item.active {
+    background: var(--dark);
+}
+
+.content .navbar .dropdown-toggle::after {
+    margin-left: 6px;
+    vertical-align: middle;
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    transition: .5s;
+}
+
+.content .navbar .dropdown-toggle[aria-expanded=true]::after {
+    transform: rotate(-180deg);
+}
+
+@media (max-width: 575.98px) {
+    .content .navbar .navbar-nav .nav-link {
+        margin-left: 15px;
+    }
+}
+
+
+/*** Date Picker ***/
+.bootstrap-datetimepicker-widget.bottom {
+    top: auto !important;
+}
+
+.bootstrap-datetimepicker-widget .table * {
+    border-bottom-width: 0px;
+}
+
+.bootstrap-datetimepicker-widget .table th {
+    font-weight: 500;
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu {
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td.active:hover {
+    background: var(--primary);
+}
+
+.bootstrap-datetimepicker-widget table td.today::before {
+    border-bottom-color: var(--primary);
+}
+
+
+/*** Testimonial ***/
+.progress .progress-bar {
+    width: 0px;
+    transition: 2s;
+}
+
+
+/*** Testimonial ***/
+.testimonial-carousel .owl-dots {
+    margin-top: 24px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 15px;
+    height: 15px;
+    border: 5px solid var(--primary);
+    border-radius: 15px;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dot.active {
+    background: var(--dark);
+    border-color: var(--primary);
+}
+
+  .empty-cell {
+    width: 20px; /* Largeur des cellules vides */
+    height: 20px; /* Hauteur des cellules vides */
+    background-color: transparent; /* Couleur de fond transparente */
+  }
+.bx-chair{
+  margin: 4px;
+}
+
+td {
+
+  cursor: pointer;
+}
+.bx-chair{
+  z-index: -1000;
+}
+.chair-checkbox {
+  display: e  ;
+  margin-left: 6px;
+  margin-bottom: -20px;
+  z-index: 1000;
+}
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+input[type="date"]::-webkit-calendar-picker {
+  /* Rendre transparent */
+  background-color: gray;
+}
+.initial-state{
+  background-color: transparent;
+
+}
+.selected-offer {
+  background-color: rgba(2, 94, 30, 0.436);
+  border: 1px solid green;
+}
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
+
+
+.body-ticket {
+    height: 100vh;
+    display: grid;
+    font-family: "Staatliches", cursive;
+    color: black;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+
+}
+
+.ticket {
+    margin: auto;
+    display: flex;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border: 1px solid white;
+}
+
+.left {
+    display: flex;
+}
+
+.image {
+    height: 457px;
+    width: 250px;
+    opacity: 0.85;
+}
+
+.admit-one {
+    position: absolute;
+    color: darkgray;
+    height: 460px;
+    padding: 0 10px;
+    letter-spacing: 0.15em;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    writing-mode: vertical-rl;
+    transform: rotate(-180deg);
+}
+
+.admit-one span:nth-child(2) {
+    color: white;
+    font-weight: 700;
+}
+
+.left .ticket-number {
+    height: 450px;
+    width: 250px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 5px;
+}
+
+.ticket-info {
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date {
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 5px 0;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.date span {
+    width: 90px;
+}
+
+.date span:first-child {
+    text-align: left;
+}
+
+.date span:last-child {
+
+    text-align: right;
+}
+
+.date .june-29 {
+    color: rgba(217, 4, 4, 0.78);
+    font-size: 20px;
+}
+
+.show-name {
+    font-size: 32px;
+    font-family: "Nanum Pen Script", cursive;
+    color: rgba(77, 1, 1, 0.78);
+}
+
+.show-name h1 {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: rgba(227, 1, 1, 0.78);
+}
+
+.time {
+    padding: 10px 0;
+    color: rgba(234, 5, 5, 0.78);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: 700;
+}
+
+.time span {
+    font-weight: 400;
+    color: gray;
+}
+
+.left .time {
+    font-size: 16px;
+}
+
+
+.location {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding-top: 8px;
+    border-top: 1px solid gray;
+}
+
+.location .separator {
+    font-size: 20px;
+}
+
+.right {
+    width: 290px;
+    border-left: 3px dashed #404040;
+}
+
+.right .admit-one {
+    color: darkgray;
+}
+
+.right .admit-one span:nth-child(2) {
+    color: gray;
+}
+
+.right .right-info-container {
+    height: 330px;
+    padding: 10px 10px 10px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.right .show-name h1 {
+    font-size: 18px;
+}
+
+.barcode {
+    height: 100px;
+}
+.playstore{
+    width: 150px;
+}
+.playstore img{
+    width: 100%;
+}
+.barcode img {
+    height: 100%;
+}
+
+.right .ticket-number {
+    color: gray;
+}
+
+

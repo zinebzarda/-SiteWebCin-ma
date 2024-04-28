@@ -15,6 +15,9 @@ public class CinemaHome extends HttpServlet {
     private final FilmDAO filmDAO = new FilmDAOImpl();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        List<Film> ratingFilms = filmDAO.getHighRatedFilms();
+        request.setAttribute("ratingFilms", ratingFilms);
         List<Film> films = filmDAO.getAllFilms();
         request.setAttribute("films", films);
         System.out.println(films);
@@ -24,6 +27,9 @@ public class CinemaHome extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-doGet(request,response);
+
+
+        doGet(request,response);
+
     }
 }
