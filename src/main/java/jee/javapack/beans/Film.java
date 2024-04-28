@@ -16,22 +16,6 @@ public class Film {
     private String ratingFilm;
     private String streamingNow;
 
-<<<<<<< HEAD
-    public Film(String titleFilm, String descriptionFilm, String runTimeFilm, String genreFilm, Date producedIn, String directedBy, String pictureURL, String backgroundURL, String ratingFilm, String streamingNow) {
-        this.titleFilm = titleFilm;
-        this.descriptionFilm = descriptionFilm;
-        this.runTimeFilm = runTimeFilm;
-        this.genreFilm = genreFilm;
-        this.producedIn = producedIn;
-        this.directedBy = directedBy;
-        this.pictureURL = pictureURL;
-        this.backgroundURL = backgroundURL;
-        this.ratingFilm = ratingFilm;
-        this.streamingNow = streamingNow;
-    }
-
-=======
->>>>>>> 7a8dc9b08099e6affebef5e4db0cbb67eb5b18fe
     public Film(Integer idFilm, String titleFilm, String descriptionFilm, String runTimeFilm, String genreFilm, Date producedIn, String directedBy, String pictureURL, String backgroundURL, String ratingFilm, String streamingNow) {
         this.idFilm = idFilm;
         this.titleFilm = titleFilm;
