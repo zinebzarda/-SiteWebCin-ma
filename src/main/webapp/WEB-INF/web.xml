@@ -5,6 +5,9 @@
          version="4.0">
 
 
+
+
+
     <servlet>
         <servlet-name>CinemaHome</servlet-name>
         <servlet-class>jee.javapack.servlets.CinemaHome</servlet-class>
@@ -13,23 +16,25 @@
         <servlet-name>CinemaHome</servlet-name>
         <url-pattern>/cinema-home</url-pattern>
     </servlet-mapping>
+
+
     <servlet>
-        <servlet-name>ReserveNow</servlet-name>
-        <servlet-class>jee.javapack.servlets.ReserveNow</servlet-class>
+        <servlet-name>DisplayFilms</servlet-name>
+        <servlet-class>jee.javapack.servlets.DisplayFilms</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ReserveNow</servlet-name>
-        <url-pattern>/reserve-now</url-pattern>
+        <servlet-name>DisplayFilms</servlet-name>
+        <url-pattern>/shows</url-pattern>
     </servlet-mapping>
 
 
     <servlet>
-        <servlet-name>SearchServlet</servlet-name>
-        <servlet-class>jee.javapack.servlets.SearchServlet</servlet-class>
+        <servlet-name>AddFilmServlet</servlet-name>
+        <servlet-class>jee.javapack.servlets.AddFilmServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>SearchServlet</servlet-name>
-        <url-pattern>/s</url-pattern>
+        <servlet-name>AddFilmServlet</servlet-name>
+        <url-pattern>/addFilm</url-pattern>
     </servlet-mapping>
 
     <servlet>
