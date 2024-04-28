@@ -55,11 +55,11 @@
 
         </div>
         <div class="search">
-            <form action="">
+            <form action="s" method="post">
                 <li class="nav-link search-bar active rounded col-10">
-                    <input class="search col-10 text-light bg-slight border border-0 px-3 py-1 rounded" id="search"
+                    <input class="search col-10 text-light bg-slight border border-0 px-3 py-1 rounded" id="titleFilm" name="titleFilm"
                            type="text" placeholder="Search for movie...">
-                    <i style="color: white;" onclick="searchWeather()" class="bx bx-search-alt icon rounded"></i>
+                    <i type="submit" style="color: white;" class="bx bx-search-alt icon rounded"></i>
                 </li>
             </form>
         </div>

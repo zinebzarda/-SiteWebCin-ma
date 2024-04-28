@@ -11,4 +11,5 @@ public interface FilmDAO {
     List<Film> getAllFilms();
     List<Film> getHighRatedFilms();
     Film getMovieById(Integer idMovie) throws SQLException, ClassNotFoundException;
+    ArrayList<Film> SearchFilms(String Title) throws SQLException, ClassNotFoundException;
 }
