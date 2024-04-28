@@ -7,16 +7,29 @@ public class Film {
     private Integer idFilm;
     private String titleFilm;
     private String descriptionFilm;
-    private Integer runTimeFilm;
+    private String runTimeFilm;
     private String genreFilm;
     private Date producedIn;
     private String directedBy;
     private String pictureURL;
     private String backgroundURL;
     private String ratingFilm;
-    private Date streamingNow;
+    private String streamingNow;
 
-    public Film(Integer idFilm, String titleFilm, String descriptionFilm, Integer runTimeFilm, String genreFilm, Date producedIn, String directedBy, String pictureURL, String backgroundURL, String ratingFilm, Date streamingNow) {
+    public Film(String titleFilm, String descriptionFilm, String runTimeFilm, String genreFilm, Date producedIn, String directedBy, String pictureURL, String backgroundURL, String ratingFilm, String streamingNow) {
+        this.titleFilm = titleFilm;
+        this.descriptionFilm = descriptionFilm;
+        this.runTimeFilm = runTimeFilm;
+        this.genreFilm = genreFilm;
+        this.producedIn = producedIn;
+        this.directedBy = directedBy;
+        this.pictureURL = pictureURL;
+        this.backgroundURL = backgroundURL;
+        this.ratingFilm = ratingFilm;
+        this.streamingNow = streamingNow;
+    }
+
+    public Film(Integer idFilm, String titleFilm, String descriptionFilm, String runTimeFilm, String genreFilm, Date producedIn, String directedBy, String pictureURL, String backgroundURL, String ratingFilm, String streamingNow) {
         this.idFilm = idFilm;
         this.titleFilm = titleFilm;
         this.descriptionFilm = descriptionFilm;
@@ -56,11 +69,11 @@ public class Film {
         this.titleFilm = titleFilm;
     }
 
-    public Integer getRunTimeFilm() {
+    public String getRunTimeFilm() {
         return runTimeFilm;
     }
 
-    public void setRunTimeFilm(int runTimeFilm) {
+    public void setRunTimeFilm(String runTimeFilm) {
         this.runTimeFilm = runTimeFilm;
     }
 
@@ -112,11 +125,11 @@ public class Film {
         this.ratingFilm = ratingFilm;
     }
 
-    public Date getStreamingNow() {
+    public String getStreamingNow() {
         return streamingNow;
     }
 
-    public void setStreamingNow(Date streamingNow) {
+    public void setStreamingNow(String streamingNow) {
         this.streamingNow = streamingNow;
     }
 

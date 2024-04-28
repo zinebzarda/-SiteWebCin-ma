@@ -16,10 +16,15 @@ public class CinemaHome extends HttpServlet {
     private final FilmDAO filmDAO = new FilmDAOImpl();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Film> films = null;
+        List<Film> ratingFilms = filmDAO.getHighRatedFilms();
+        request.setAttribute("ratingFilms", ratingFilms);
+
+        List<Film> films;
         try {
             films = filmDAO.getAllFilms();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
         request.setAttribute("films", films);
@@ -30,6 +35,6 @@ public class CinemaHome extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-doGet(request,response);
+        doGet(request,response);
     }
 }
