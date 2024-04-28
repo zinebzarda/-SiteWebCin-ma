@@ -27,7 +27,7 @@ nav{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 10px 50px;
+    padding: 10px 20px;
     background: rgba(0, 0, 0, 0.6);
     text-align: center;
     align-items: center;
@@ -394,7 +394,7 @@ p {
     top: 0;
     left: 0;
     bottom: 0;
-    width: 250px;
+    width: 280px;
     height: 100vh;
     overflow-y: auto;
     background: var(--secondary);
@@ -403,7 +403,7 @@ p {
 }
 
 .content {
-    margin-left: 250px;
+    margin-left: 280px;
     min-height: 100vh;
     background: var(--dark);
     transition: 0.5s;

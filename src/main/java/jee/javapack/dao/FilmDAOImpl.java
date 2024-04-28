@@ -49,6 +49,7 @@ public class FilmDAOImpl implements FilmDAO {
                 film.setRunTimeFilm(resultSet.getString("runTimeFilm"));
                 film.setGenreFilm(resultSet.getString("genreFilm"));
                 film.setProducedIn(resultSet.getDate("producedIn"));
+                film.setDirectedBy(resultSet.getString("directedBy"));
                 film.setPictureURL(resultSet.getString("pictureURL"));
                 film.setStreamingNow(resultSet.getString("streamingNow"));
                 film.setRatingFilm(resultSet.getString("ratingFilm"));

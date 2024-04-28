@@ -46,5 +46,22 @@
         <url-pattern>/auth-user</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>jee.javapack.servlets.SearchServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/s</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ReserveNow</servlet-name>
+        <servlet-class>jee.javapack.servlets.ReserveNow</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReserveNow</servlet-name>
+        <url-pattern>/reserve-now</url-pattern>
+    </servlet-mapping>
 
 </web-app>
