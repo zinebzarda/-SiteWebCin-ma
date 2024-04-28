@@ -55,39 +55,16 @@
     <div style="width: 100%; padding-top: 50px; padding-left: 120px; display: flex; flex-direction: row;"
          class="text-white my-4">
         <img style="height: 250px; width: 170px; margin: 10px 0;" class="card border-0"
-             src="images/game-of-thrones-1.jpg" alt="">
         <div style="margin-left: 20px;">
-            <h4 class="movieTitle" style="text-align: start; padding-top: 10px;">Game Of Thrones</h4>
-            <p style="font-size: 15px; text-align: start;">Genre : Action, Drame, Fantasy</p>
-            <p style="font-size: 11px; text-align: start;">2h 30min - <span>July 26, 2010 - </span><span
-                    style="font-weight: bold;">HBO</span></p>
             <p style="font-size: 11px; text-align: start;"><span
                     style='color:#fdb000; background: rgba(0, 0, 0, 0.6);' class="text-success rounded p-1">92%
                         Match </span><span style='background: rgba(0, 0, 0, 0.6);' class="rounded p-1 mx-1">TV -
                         MA</span><span style=' background: rgba(0, 0, 0, 0.6); font-weight: bold;'
                                        class="rounded p-1 mx-1">HD</span><span style='color:#fdb000; background: rgba(0, 0, 0, 0.6);'
-                                                                               class="rounded p-1 mx-1">5.1 <i class='bx bxs-star' style='color:#fdb000'></i></span></p>
             <div class="text-light">
                 <h5>Stream Date </h5>
                 <div style="display: flex; gap: 30px;" class="buttons">
                     <button style="font-size: 15px; display: flex; flex-direction: column;"
-                            class="btn px-4 py-1 text-light mt-2"><span>FRI</span><span
-                            style="font-size: 25px;">26</span><span>MAY</span></button>
-                    <button style="font-size: 15px; display: flex; flex-direction: column;"
-                            class="btn px-4 py-1 text-light mt-2"><span>FRI</span><span
-                            style="font-size: 25px;">26</span><span>MAY</span></button>
-                    <button style="font-size: 15px; display: flex; flex-direction: column;"
-                            class="btn px-4 py-1 text-light mt-2"><span>FRI</span><span
-                            style="font-size: 25px;">26</span><span>MAY</span></button>
-                    <button style="font-size: 15px; display: flex; flex-direction: column;"
-                            class="btn px-4 py-1 text-light mt-2"><span>FRI</span><span
-                            style="font-size: 25px;">26</span><span>MAY</span></button>
-                    <button style="font-size: 15px; display: flex; flex-direction: column;"
-                            class="btn px-4 py-1 text-light mt-2"><span>FRI</span><span
-                            style="font-size: 25px;">26</span><span>MAY</span></button>
-                    <button style="font-size: 15px; display: flex; flex-direction: column;"
-                            class="btn px-4 py-1 text-light mt-2"><span>FRI</span><span
-                            style="font-size: 25px;">26</span><span>MAY</span></button>
                 </div>
                 <h5 class="mt-4">Stream Time </h5>
                 <div style="display: flex; gap: 20px;" class="">
@@ -141,18 +118,10 @@
             <div style="width: 90%; height: 85%; margin-top: 50px; margin-left: 10px; border-radius: 20px; background-color: rgba(140,140,140,0.3); border: 1px solid rgba(150, 26, 26, 0.6);" class="">
                 <div style="padding-left: 50px;" class="col-10 py-2">
                     <label style="font-size: 15px;" for="date">Date</label>
-                    <input class="form-control text-light bg-dark mt-2 px-4" type="date" id="date" class="date" name="date" value="" min="2024-04-26" max="2024-05-01" />
                 </div>
                 <div style="padding-left: 50px;" class="col-10 py-2">
                     <label style="font-size: 15px;" for="time">Time</label>
-                    <input class="form-control text-light bg-dark mt-2 px-4" type="time" id="time" class="time" name="time" list="hoursList" min="10:00" max="20:00">
                     <datalist id="hoursList">
-                        <option value="10:00"></option>
-                        <option value="12:00"></option>
-                        <option value="14:00"></option>
-                        <option value="16:00"></option>
-                        <option value="18:00"></option>
-                        <option value="20:00"></option>
                     </datalist>
 
                 </div>
@@ -540,7 +509,6 @@
             </div>
 
         </div>
-        <form action="cinema-home" method="post">
             <div style="height: 500px; width: 400px;" class="container">
                 <div style="width: 90%; height: 85%; margin-top: 50px; margin-left: 30px; border-radius: 20px; border: 1px solid rgba(150, 26, 26, 0.6); background-color: rgba(140,140,140,0.3)">
                     <div style="padding-left: 15px; border-bottom: 1px solid #460d0d;">
@@ -559,7 +527,6 @@
                         <div style="display: flex; gap: 30px;">
                             <div>
                                 <span style="color: gray; font-size: 15px;">Time</span>
-                                <p id="timeInput">--:--</p>
                                 <input type="hidden" name="timeInput" class="timeInput" value="">
                             </div>
                             <div>

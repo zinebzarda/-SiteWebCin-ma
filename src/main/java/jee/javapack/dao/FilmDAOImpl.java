@@ -29,38 +29,6 @@ public class FilmDAOImpl implements FilmDAO {
     }
 
     @Override
-    public List<Film> getHighRatedFilms() {
-        List<Film> highRatedFilms = new ArrayList<>();
-
-        try {
-            Connection connection = ConnectionDAO.getConnection();
-            String query = "SELECT * FROM film WHERE ratingFilm > 4 ORDER BY ratingFilm DESC";
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
-            ResultSet resultSet = preparedStatement.executeQuery();
-
-            while (resultSet.next()) {
-                Film film = new Film();
-                film.setIdFilm(resultSet.getInt("idFilm"));
-                film.setTitleFilm(resultSet.getString("titleFilm"));
-                film.setDescriptionFilm(resultSet.getString("descriptionFilm"));
-                film.setRunTimeFilm(resultSet.getInt("runTimeFilm"));
-                film.setGenreFilm(resultSet.getString("genreFilm"));
-                film.setProducedIn(resultSet.getDate("producedIn"));
-                film.setPictureURL(resultSet.getString("pictureURL"));
-                film.setStreamingNow(resultSet.getDate("streamingNow"));
-                film.setRatingFilm(resultSet.getString("ratingFilm"));
-
-                highRatedFilms.add(film);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return highRatedFilms;
-    }
-
-
-    @Override
     public List<Film> getAllFilms(){
 
         List<Film> films = new ArrayList<>();

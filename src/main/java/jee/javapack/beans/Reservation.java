@@ -1,24 +1,20 @@
 package jee.javapack.beans;
 
-import java.sql.Time;
 import java.util.Date;
 
 public class Reservation {
     private Integer idReservation;
     private Integer idUser;
     private Integer idFilm;
-    private Integer idBillets;
     private Date dateReservation;
+    private Integer numberBillets;
 
-    private Time timeReservation;
-
-    public Reservation(Integer idReservation, Integer idUser, Integer idFilm, Integer idBillets, Date dateReservation, Time timeReservation) {
+    public Reservation(Integer idReservation, Integer idUser, Integer idFilm, Date dateReservation, Integer numberBillets) {
         this.idReservation = idReservation;
         this.idUser = idUser;
         this.idFilm = idFilm;
-        this.idBillets = idBillets;
         this.dateReservation = dateReservation;
-        this.timeReservation = timeReservation;
+        this.numberBillets = numberBillets;
     }
 
     public Integer getIdReservation() {
@@ -45,14 +41,6 @@ public class Reservation {
         this.idFilm = idFilm;
     }
 
-    public Integer getIdBillets() {
-        return idBillets;
-    }
-
-    public void setIdBillets(Integer idBillets) {
-        this.idBillets = idBillets;
-    }
-
     public Date getDateReservation() {
         return dateReservation;
     }
@@ -61,11 +49,11 @@ public class Reservation {
         this.dateReservation = dateReservation;
     }
 
-    public Time getTimeReservation() {
-        return timeReservation;
+    public Integer getNumberBillets() {
+        return numberBillets;
     }
 
-    public void setTimeReservation(Time timeReservation) {
-        this.timeReservation = timeReservation;
+    public void setNumberBillets(Integer numberBillets) {
+        this.numberBillets = numberBillets;
     }
 }

@@ -45,8 +45,8 @@ a {
 
 button {
     border-radius: 20px;
-    border: 1px solid #ff2bc6;
-    background-color: #bf2bff;
+    border: 1px solid rgba(77, 1, 1, 0.78);
+    background-color: rgba(117, 3, 3, 0.78);
     color: #ffffff;
     font-size: 12px;
     font-weight: bold;
@@ -70,7 +70,7 @@ button.ghost {
 }
 
 form {
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -159,9 +159,9 @@ input {
 }
 
 .overlay {
-    background: #bf2bff;
-    background: -webkit-linear-gradient(to right, #bf2bff, #bf2bff);
-    background: linear-gradient(to right, #bf2bff, #bf2bff);
+    background: rgba(117, 3, 3, 0.78);
+    background: -webkit-linear-gradient(to right, rgba(117, 3, 3, 0.78), rgba(217, 4, 4, 0.78));
+    background: linear-gradient(to right, rgba(217, 4, 4, 0.78), rgba(117, 3, 3, 0.78));
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;
