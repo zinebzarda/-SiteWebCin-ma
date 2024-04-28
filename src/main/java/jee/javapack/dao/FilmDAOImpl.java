@@ -52,7 +52,7 @@ public class FilmDAOImpl implements FilmDAO {
                 film.setPictureURL(resultSet.getString("pictureURL"));
                 film.setStreamingNow(resultSet.getString("streamingNow"));
                 film.setRatingFilm(resultSet.getString("ratingFilm"));
-
+                film.setBackgroundURL(resultSet.getString("backgroundURL"));
                 highRatedFilms.add(film);
             }
         } catch (SQLException e) {
@@ -105,11 +105,11 @@ public class FilmDAOImpl implements FilmDAO {
                         film.setIdFilm(resultSet.getInt("idFilm"));
                         film.setTitleFilm(resultSet.getString("titleFilm"));
                         film.setDescriptionFilm(resultSet.getString("descriptionFilm"));
-                        film.setRunTimeFilm(resultSet.getInt("runTimeFilm"));
+                        film.setRunTimeFilm(resultSet.getString("runTimeFilm"));
                         film.setGenreFilm(resultSet.getString("genreFilm"));
                         film.setProducedIn(resultSet.getDate("producedIn"));
                         film.setPictureURL(resultSet.getString("pictureURL"));
-                        film.setStreamingNow(resultSet.getDate("streamingNow"));
+                        film.setStreamingNow(resultSet.getString("streamingNow"));
                         film.setRatingFilm(resultSet.getString("ratingFilm"));
 
                         films.add(film);
@@ -136,14 +136,14 @@ public class FilmDAOImpl implements FilmDAO {
             Integer idFilm = resultat.getInt("idFilm");
             String titleFilm = resultat.getString("titleFilm");
             String descriptionFilm = resultat.getString("descriptionFilm");
-            Integer runTimeFilm = resultat.getInt("runTimeFilm");
+            String runTimeFilm = resultat.getString("runTimeFilm");
             String genreFilm = resultat.getString("genreFilm");
             Date producedIn = resultat.getDate("producedIn");
             String directedBy = resultat.getString("directedBy");
             String pictureURL = resultat.getString("pictureURL");
             String backgroundURL = resultat.getString("backgroundURL");
             String ratingFilm = resultat.getString("ratingFilm");
-            Date streamingNow = resultat.getDate("streamingNow");
+            String streamingNow = resultat.getString("streamingNow");
             SearchFilmsRe.add(new Film(idFilm,  titleFilm,  descriptionFilm,  runTimeFilm,  genreFilm,  producedIn,  directedBy,  pictureURL,  backgroundURL,  ratingFilm,  streamingNow));
         }
 
