@@ -29,7 +29,7 @@ public class Login extends HttpServlet {
                 if ("admin".equals(role)) {
                     response.sendRedirect("admin.jsp");
                 } else {
-                    response.sendRedirect("Reservation.jsp");
+                    response.sendRedirect("CinemaHome.jsp");
                 }
             } else {
                 response.sendRedirect("authentication.jsp");

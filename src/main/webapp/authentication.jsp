@@ -13,6 +13,7 @@
 </head>
 <body>
 <input type ="hidden" id="status" value = "<%= request.getAttribute("status") %>">
+<div class="background"></div>
 <div class="container" id="container">
     <div class="form-container sign-up-container">
         <form method="post"  action="signUp" >
