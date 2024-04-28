@@ -1,9 +1,7 @@
 package jee.javapack.dao;
 import jee.javapack.beans.Film;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,14 +29,15 @@ public class FilmDAOImpl implements FilmDAO {
         }
     }
 
-    @Override
-    public List<Film> getAllFilms(){
 
-        List<Film> films = new ArrayList<>();
+
+    @Override
+    public List<Film> getHighRatedFilms() {
+        List<Film> highRatedFilms = new ArrayList<>();
 
         try {
             Connection connection = ConnectionDAO.getConnection();
-            String query = "SELECT * FROM film";
+            String query = "SELECT * FROM film WHERE ratingFilm > 4 ORDER BY ratingFilm DESC";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -47,19 +46,18 @@ public class FilmDAOImpl implements FilmDAO {
                 film.setIdFilm(resultSet.getInt("idFilm"));
                 film.setTitleFilm(resultSet.getString("titleFilm"));
                 film.setDescriptionFilm(resultSet.getString("descriptionFilm"));
-              //  film.setRunTimeFilm(resultSet.getInt("runTimeFilm"));
+                film.setRunTimeFilm(resultSet.getString("runTimeFilm"));
                 film.setGenreFilm(resultSet.getString("genreFilm"));
                 film.setProducedIn(resultSet.getDate("producedIn"));
                 film.setPictureURL(resultSet.getString("pictureURL"));
-             //   film.setStreamingNow(resultSet.getDate("streamingNow"));
+                film.setStreamingNow(resultSet.getString("streamingNow"));
                 film.setRatingFilm(resultSet.getString("ratingFilm"));
-
-                films.add(film);
+                film.setBackgroundURL(resultSet.getString("backgroundURL"));
+                highRatedFilms.add(film);
             }
-        } catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
-
 
         return highRatedFilms;
     }
@@ -108,11 +106,11 @@ public class FilmDAOImpl implements FilmDAO {
                         film.setIdFilm(resultSet.getInt("idFilm"));
                         film.setTitleFilm(resultSet.getString("titleFilm"));
                         film.setDescriptionFilm(resultSet.getString("descriptionFilm"));
-                        film.setRunTimeFilm(resultSet.getInt("runTimeFilm"));
+                        film.setRunTimeFilm(resultSet.getString("runTimeFilm"));
                         film.setGenreFilm(resultSet.getString("genreFilm"));
                         film.setProducedIn(resultSet.getDate("producedIn"));
                         film.setPictureURL(resultSet.getString("pictureURL"));
-                        film.setStreamingNow(resultSet.getDate("streamingNow"));
+                        film.setStreamingNow(resultSet.getString("streamingNow"));
                         film.setRatingFilm(resultSet.getString("ratingFilm"));
 
                         films.add(film);
@@ -182,7 +180,7 @@ public class FilmDAOImpl implements FilmDAO {
         try (PreparedStatement statement = connection.prepareStatement(sql);
              ResultSet resultat = statement.executeQuery()) {
             while (resultat.next()) {
-
+                Integer idFilm = resultat.getInt("idFilm");
                 String titleFilm = resultat.getString("titleFilm");
                 String descriptionFilm = resultat.getString("descriptionFilm");
                 String runTimeFilm = resultat.getString("runTimeFilm");
@@ -194,7 +192,7 @@ public class FilmDAOImpl implements FilmDAO {
                 String ratingFilm = resultat.getString("ratingFilm");
                 String streamingNow = resultat.getString("streamingNow");
 
-                Film film = new Film(titleFilm,  descriptionFilm,  runTimeFilm,  genreFilm,  producedIn,  directedBy,  pictureURL,  backgroundURL,  ratingFilm,  streamingNow);
+                Film film = new Film(idFilm, titleFilm,  descriptionFilm,  runTimeFilm,  genreFilm,  producedIn,  directedBy,  pictureURL,  backgroundURL,  ratingFilm,  streamingNow);
                 films.add(film);
             }
         }
@@ -233,10 +231,5 @@ public class FilmDAOImpl implements FilmDAO {
         }
     }
 
-
     }
-
-        return films;
-    }
-}
 
