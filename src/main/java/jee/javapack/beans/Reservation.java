@@ -7,16 +7,21 @@ public class Reservation {
     private Integer idReservation;
     private Integer idUser;
     private Integer idFilm;
-    private Integer idBillets;
+    private Integer qrCodeBillet;
+    private String seatPlace;
+    private String experienceType;
+    private String offerBillet;
     private Date dateReservation;
-
     private Time timeReservation;
 
-    public Reservation(Integer idReservation, Integer idUser, Integer idFilm, Integer idBillets, Date dateReservation, Time timeReservation) {
+    public Reservation(Integer idReservation, Integer idUser, Integer idFilm, Integer qrCodeBillet, String seatPlace, String ExperienceType, String offerBillet, Date dateReservation, Time timeReservation) {
         this.idReservation = idReservation;
         this.idUser = idUser;
         this.idFilm = idFilm;
-        this.idBillets = idBillets;
+        this.qrCodeBillet = qrCodeBillet;
+        this.seatPlace = seatPlace;
+        experienceType = ExperienceType;
+        this.offerBillet = offerBillet;
         this.dateReservation = dateReservation;
         this.timeReservation = timeReservation;
     }
@@ -45,12 +50,36 @@ public class Reservation {
         this.idFilm = idFilm;
     }
 
-    public Integer getIdBillets() {
-        return idBillets;
+    public Integer getQrCodeBillet() {
+        return qrCodeBillet;
     }
 
-    public void setIdBillets(Integer idBillets) {
-        this.idBillets = idBillets;
+    public void setQrCodeBillet(Integer qrCodeBillet) {
+        this.qrCodeBillet = qrCodeBillet;
+    }
+
+    public String getSeatPlace() {
+        return seatPlace;
+    }
+
+    public void setSeatPlace(String seatPlace) {
+        this.seatPlace = seatPlace;
+    }
+
+    public String getExperienceType() {
+        return experienceType;
+    }
+
+    public void setExperienceType(String ExperienceType) {
+        experienceType = ExperienceType;
+    }
+
+    public String getOfferBillet() {
+        return offerBillet;
+    }
+
+    public void setOfferBillet(String offerBillet) {
+        this.offerBillet = offerBillet;
     }
 
     public Date getDateReservation() {
