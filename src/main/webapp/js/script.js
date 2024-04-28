@@ -71,3 +71,5 @@ document
         e.preventDefault();
         swiper.virtual.appendSlide('Slide ' + ++appendNumber);
     });
+
+

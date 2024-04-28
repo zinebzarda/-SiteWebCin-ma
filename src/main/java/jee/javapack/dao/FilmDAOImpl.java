@@ -11,6 +11,7 @@ import java.util.List;
 
 public class FilmDAOImpl implements FilmDAO {
 
+<<<<<<< HEAD
 
 
 
@@ -28,6 +29,25 @@ public class FilmDAOImpl implements FilmDAO {
 //                    resultSet.getString("pictureURL")
 //            );
 //            listFilm.add(film);
+=======
+    public void statementFilm(ArrayList<Film> listFilm, PreparedStatement statement) throws SQLException {
+        ResultSet resultSet = statement.executeQuery();
+        while (resultSet.next()) {
+            Film film = new Film(
+                    resultSet.getInt("idFilm"),
+                    resultSet.getString("titleFilm"),
+                    resultSet.getString("descriptionFilm"),
+                    resultSet.getString("runTimeFilm"),
+                    resultSet.getString("genreFilm"),
+                    resultSet.getDate("producedIn"),
+                    resultSet.getString("directedBy"),
+                    resultSet.getString("pictureURL"),
+                    resultSet.getString("backgroundURL"),
+                    resultSet.getString("ratingFilm"),
+                    resultSet.getString("streamingNow")
+            );
+            listFilm.add(film);
+>>>>>>> 7a8dc9b08099e6affebef5e4db0cbb67eb5b18fe
         }
     }
 
@@ -60,6 +80,7 @@ public class FilmDAOImpl implements FilmDAO {
         }
 
         return highRatedFilms;
+<<<<<<< HEAD
     }
 
 
@@ -92,6 +113,69 @@ public class FilmDAOImpl implements FilmDAO {
             }
 
 
+=======
+    }
+
+    @Override
+    public Film getMovieById(Integer idMovie) throws SQLException, ClassNotFoundException {
+        Film foundFilm = null;
+        Connection connection = ConnectionDAO.getConnection();
+        String queryIdMovie = "SELECT * FROM film WHERE idFilm = ?";
+        PreparedStatement statement = connection.prepareStatement(queryIdMovie);
+        statement.setInt(1, idMovie);
+        ResultSet resultSet = statement.executeQuery();
+        while (resultSet.next()) {
+            foundFilm = new Film(
+                    resultSet.getInt("idFilm"),
+                    resultSet.getString("titleFilm"),
+                    resultSet.getString("descriptionFilm"),
+                    resultSet.getString("runTimeFilm"),
+                    resultSet.getString("genreFilm"),
+                    resultSet.getDate("producedIn"),
+                    resultSet.getString("directedBy"),
+                    resultSet.getString("pictureURL"),
+                    resultSet.getString("backgroundURL"),
+                    resultSet.getString("ratingFilm"),
+                    resultSet.getString("streamingNow")
+            );
+        }
+        return foundFilm;
+    }
+
+
+    @Override
+    public List<Film> getAllFilms(){
+
+        List<Film> films = new ArrayList<>();
+
+                try {
+                    Connection connection = ConnectionDAO.getConnection();
+                    String query = "SELECT * FROM film";
+                    PreparedStatement preparedStatement = connection.prepareStatement(query);
+                    ResultSet resultSet = preparedStatement.executeQuery();
+
+                    while (resultSet.next()) {
+                        Film film = new Film();
+                        film.setIdFilm(resultSet.getInt("idFilm"));
+                        film.setTitleFilm(resultSet.getString("titleFilm"));
+                        film.setDescriptionFilm(resultSet.getString("descriptionFilm"));
+                        film.setRunTimeFilm(resultSet.getInt("runTimeFilm"));
+                        film.setGenreFilm(resultSet.getString("genreFilm"));
+                        film.setProducedIn(resultSet.getDate("producedIn"));
+                        film.setPictureURL(resultSet.getString("pictureURL"));
+                        film.setStreamingNow(resultSet.getDate("streamingNow"));
+                        film.setRatingFilm(resultSet.getString("ratingFilm"));
+
+                        films.add(film);
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                return films;
+    }
+
+
+>>>>>>> 7a8dc9b08099e6affebef5e4db0cbb67eb5b18fe
 
     @Override
     public ArrayList<Film> SearchFilms(String Title) throws SQLException, ClassNotFoundException {

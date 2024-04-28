@@ -16,6 +16,7 @@
           integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
           crossorigin="anonymous" referrerpolicy="no-referrer">
     <!-- Css link -->
+
     <style><%@include file="css/style.css"%></style>
     <!-- BOX ICONS  -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -71,29 +72,30 @@
 </nav>
 <section class="movie-trend">
     <img style="z-index: -1000; width: 1300px; position: absolute; top: 0; left: 0;" src="images/bg-GOT.jpg">
-    <div style="width: 40%; padding-top: 50px; padding-left: 120px;" class="text-white my-4">
-        <img style="height: 250px; width: 170px; margin: 10px 0;" class="card" src="images/game-of-thrones-1.jpg"
-             alt="">
-        <p style="font-size: 11px; text-align: start;">2h 30min - <span>July 26, 2010 - </span><span
-                style="font-weight: bold;">HBO</span></p>
-        <p style="font-size: 11px; text-align: start;"><span class="text-success">92% Match </span><span
-                class="border rounded px-1 mx-2">TV - MA</span><span style="font-weight: bold;"
-                                                                     class="border rounded px-1 mx-1 ">HD</span><span
-                style='color:#fdb000; background: rgba(0, 0, 0, 0.6);' class="rounded border px-2 mx-1">5.1 <i
-                class='bx bxs-star' style='color:#fdb000'></i></span></p>
-        <h4 style="text-align: start;">Game Of Thrones : last fight</h4>
-        <p style="font-size: 15px; text-align: start;">Genre : Action, Drame, Fantasy</p>
-        <p style="font-size: 10px; text-align: start;">Nine noble families vie for control of the Iron Throne in the
-            seven kingdoms of Westeros. Meanwhile, ancient, forgotten mythical creatures return to wreak havoc.</p>
-        <div class="buttons text-light">
-            <button class="btn text-light mt-2">More details <i class='bx bxs-right-arrow'
-                                                                style='color:#ffffff'></i></button>
-            <button class="btn text-light mt-2">View trailer <i class='bx bxs-show'
-                                                                style='color:#ffffff'></i></button>
-            <button class="btn btn-book text-light mt-2">Book Now <i class='bx bxs-coupon'
-                                                                     style='color:#ffffff'></i></button>
+    <c:if test="${not empty films}">
+        <div style="width: 40%; padding-top: 50px; padding-left: 120px;" class="text-white my-4">
+            <img style="height: 250px; width: 170px; margin: 10px 0;" class="card" src="${films[0].getPictureURL()}" alt="${films[0].getTitleFilm()}">
+            <p style="font-size: 11px; text-align: start;">${films[0].getRunTimeFilm()} -<span> ${films[0].getProducedIn()} -</span><span
+                    style="font-weight: bold;">${films[0].getDirectedBy()}</span></p>
+            <p style="font-size: 11px; text-align: start;"><span class="text-success">92% Match </span><span
+                    class="border rounded px-1 mx-2">TV - MA</span><span style="font-weight: bold;"
+                                                                         class="border rounded px-1 mx-1 ">HD</span><span
+                    style='color:#fdb000; background: rgba(0, 0, 0, 0.6);' class="rounded border px-2 mx-1">${films[0].getRatingFilm()} <i
+                    class='bx bxs-star' style='color:#fdb000'></i></span></p>
+            <h4 style="text-align: start;">${films[0].titleFilm}</h4>
+            <p style="font-size: 15px; text-align: start;">${films[0].genreFilm}</p>
+            <p style="font-size: 10px; text-align: start;">${films[0].descriptionFilm}</p>
+            <div class="buttons text-light">
+                <button class="btn text-light mt-2">More details <i class='bx bxs-right-arrow'
+                                                                    style='color:#ffffff'></i></button>
+                <button class="btn text-light mt-2">View trailer <i class='bx bxs-show'
+                                                                    style='color:#ffffff'></i></button>
+                <button class="btn btn-book text-light mt-2">Book Now <i class='bx bxs-coupon'
+                                                                         style='color:#ffffff'></i></button>
+            </div>
         </div>
-    </div>
+    </c:if>
+
 
 
 </section>
@@ -102,18 +104,18 @@
     <div id="slider">
         <p style="font-size: 20px; text-align: start; font-weight: bold;" class="text-light">Trending Now !</p>
         <div class="d-flex flex-row">
-        <c:forEach var="film" items="${ratingFilms}" varStatus="loop">
             <div style="width: 98%;" class="cards row">
                 <div class="swiper">
-                    <div style="" class="swiper-wrapper">
+                    <div style="" class="swiper-wrapper cards row">
+                        <c:forEach var="film" items="${ratingFilms}" varStatus="loop">
                         <div class="movie-card-trend text-white">
                             <img style="height: 220px; width: 150px; margin-top: 20px;" class="card" src="${film.pictureURL}" alt="${film.titleFilm}">
                             <h1 style="font-size: 60px; font-weight: bold; opacity: 90%; z-index: 1000; margin-top: -55px; margin-left: -10px;" >${loop.index + 1}</h1>
                         </div>
+                        </c:forEach>
                     </div>
                 </div>
             </div>
-        </c:forEach>
         </div>
     </div>
 </section>
@@ -137,7 +139,7 @@
                         <h2 class="card__title">${film.titleFilm}</h2>
                         <p class="card__description">${film.descriptionFilm}</p>
                     </div>
-                    <button class="btn card__button text-light mt-2 rounded align-items-center">Book <i class='bx bxs-coupon' style='color:#ffffff; margin-left: 5px;'></i></button>
+                    <a href="${pageContext.request.contextPath}/reserve-now?id=${film.getIdFilm()}" class="btn card__button text-light mt-2 rounded align-items-center">Book <i class='bx bxs-coupon' style='color:#ffffff; margin-left: 5px;'></i></a>
                 </div>
 
             </article>
