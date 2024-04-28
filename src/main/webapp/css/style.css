@@ -321,7 +321,6 @@ p {
 }
 
 
-<<<<<<< HEAD
          /*Admin*/
 
 /********** Template CSS **********/
@@ -613,7 +612,7 @@ p {
     background: var(--dark);
     border-color: var(--primary);
 }
-=======
+
   .empty-cell {
     width: 20px; /* Largeur des cellules vides */
     height: 20px; /* Hauteur des cellules vides */
@@ -837,4 +836,3 @@ input[type="date"]::-webkit-calendar-picker {
 }
 
 
->>>>>>> 7a8dc9b08099e6affebef5e4db0cbb67eb5b18fe
