@@ -6,7 +6,7 @@
 
     <display-name>/</display-name>
     <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
+        <welcome-file>authentication.jsp</welcome-file>
     </welcome-file-list>
 
     <servlet>
@@ -17,6 +17,15 @@
         <servlet-name>CinemaHome</servlet-name>
         <url-pattern>/cinema-home</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ReserveNow</servlet-name>
+        <servlet-class>jee.javapack.servlets.ReserveNow</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReserveNow</servlet-name>
+        <url-pattern>/reserve-now</url-pattern>
+    </servlet-mapping>
+
 
     <servlet>
         <servlet-name>SearchServlet</servlet-name>

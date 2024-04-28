@@ -16,12 +16,10 @@ public class CinemaHome extends HttpServlet {
     private final FilmDAO filmDAO = new FilmDAOImpl();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Film> films = null;
-        try {
-            films = filmDAO.getAllFilms();
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+        List<Film> ratingFilms = filmDAO.getHighRatedFilms();
+        request.setAttribute("ratingFilms", ratingFilms);
+
+        List<Film> films = filmDAO.getAllFilms();
         request.setAttribute("films", films);
         System.out.println(films);
         request.getRequestDispatcher("/CinemaHome.jsp").forward(request, response);
@@ -30,6 +28,6 @@ public class CinemaHome extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-doGet(request,response);
+
     }
 }
