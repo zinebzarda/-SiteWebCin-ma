@@ -11,20 +11,23 @@ import java.util.List;
 public class FilmDAOImpl implements FilmDAO {
 
 
-    public void statementFilm(List<Film> listFilm, PreparedStatement statement) throws SQLException {
+    public void statementFilm(ArrayList<Film> listFilm, PreparedStatement statement) throws SQLException {
         ResultSet resultSet = statement.executeQuery();
         while (resultSet.next()) {
-//            Film film = new Film(
-//                    resultSet.getInt("idFilm"),
-//                    resultSet.getString("titleFilm"),
-//                    resultSet.getString("descriptionFilm"),
-//                    resultSet.getInt("runTimeFilm"),
-//                    resultSet.getString("genreFilm"),
-//                    resultSet.getDate("producedIn"),
-//                    resultSet.getString("directedBy"),
-//                    resultSet.getString("pictureURL")
-//            );
-//            listFilm.add(film);
+            Film film = new Film(
+                    resultSet.getInt("idFilm"),
+                    resultSet.getString("titleFilm"),
+                    resultSet.getString("descriptionFilm"),
+                    resultSet.getString("runTimeFilm"),
+                    resultSet.getString("genreFilm"),
+                    resultSet.getDate("producedIn"),
+                    resultSet.getString("directedBy"),
+                    resultSet.getString("pictureURL"),
+                    resultSet.getString("backgroundURL"),
+                    resultSet.getString("ratingFilm"),
+                    resultSet.getString("streamingNow")
+            );
+            listFilm.add(film);
         }
     }
 
@@ -43,11 +46,11 @@ public class FilmDAOImpl implements FilmDAO {
                 film.setIdFilm(resultSet.getInt("idFilm"));
                 film.setTitleFilm(resultSet.getString("titleFilm"));
                 film.setDescriptionFilm(resultSet.getString("descriptionFilm"));
-                film.setRunTimeFilm(resultSet.getInt("runTimeFilm"));
+                film.setRunTimeFilm(resultSet.getString("runTimeFilm"));
                 film.setGenreFilm(resultSet.getString("genreFilm"));
                 film.setProducedIn(resultSet.getDate("producedIn"));
                 film.setPictureURL(resultSet.getString("pictureURL"));
-                film.setStreamingNow(resultSet.getDate("streamingNow"));
+                film.setStreamingNow(resultSet.getString("streamingNow"));
                 film.setRatingFilm(resultSet.getString("ratingFilm"));
 
                 highRatedFilms.add(film);
@@ -57,6 +60,32 @@ public class FilmDAOImpl implements FilmDAO {
         }
 
         return highRatedFilms;
+    }
+
+    @Override
+    public Film getMovieById(Integer idMovie) throws SQLException, ClassNotFoundException {
+        Film foundFilm = null;
+        Connection connection = ConnectionDAO.getConnection();
+        String queryIdMovie = "SELECT * FROM film WHERE idFilm = ?";
+        PreparedStatement statement = connection.prepareStatement(queryIdMovie);
+        statement.setInt(1, idMovie);
+        ResultSet resultSet = statement.executeQuery();
+        while (resultSet.next()) {
+            foundFilm = new Film(
+                    resultSet.getInt("idFilm"),
+                    resultSet.getString("titleFilm"),
+                    resultSet.getString("descriptionFilm"),
+                    resultSet.getString("runTimeFilm"),
+                    resultSet.getString("genreFilm"),
+                    resultSet.getDate("producedIn"),
+                    resultSet.getString("directedBy"),
+                    resultSet.getString("pictureURL"),
+                    resultSet.getString("backgroundURL"),
+                    resultSet.getString("ratingFilm"),
+                    resultSet.getString("streamingNow")
+            );
+        }
+        return foundFilm;
     }
 
 
@@ -76,11 +105,11 @@ public class FilmDAOImpl implements FilmDAO {
                 film.setIdFilm(resultSet.getInt("idFilm"));
                 film.setTitleFilm(resultSet.getString("titleFilm"));
                 film.setDescriptionFilm(resultSet.getString("descriptionFilm"));
-                film.setRunTimeFilm(resultSet.getInt("runTimeFilm"));
+                film.setRunTimeFilm(resultSet.getString("runTimeFilm"));
                 film.setGenreFilm(resultSet.getString("genreFilm"));
                 film.setProducedIn(resultSet.getDate("producedIn"));
                 film.setPictureURL(resultSet.getString("pictureURL"));
-                film.setStreamingNow(resultSet.getDate("streamingNow"));
+                film.setStreamingNow(resultSet.getString("streamingNow"));
                 film.setRatingFilm(resultSet.getString("ratingFilm"));
 
                 films.add(film);
