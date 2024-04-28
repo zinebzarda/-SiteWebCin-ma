@@ -29,11 +29,7 @@ public class DisplayServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Film> films = null;
-        try {
-            films = filmDAO.getAllFilms();
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+        films = filmDAO.getAllFilms();
 
         request.setAttribute("films", films);
         System.out.println("jhgmkppmlkjhgjhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");

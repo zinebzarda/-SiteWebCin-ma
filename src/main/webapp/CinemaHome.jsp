@@ -71,20 +71,20 @@
     </div>
 </nav>
 <section class="movie-trend">
-    <img style="z-index: -1000; width: 1300px; position: absolute; top: 0; left: 0;" src="images/bg-GOT.jpg">
-    <c:if test="${not empty films}">
+    <c:if test="${not empty trendFilms}">
+        <img style="z-index: -1000; width: 1300px; position: absolute; top: 0; left: 0;" src="${trendFilms[0].getBackgroundURL()}">
         <div style="width: 40%; padding-top: 50px; padding-left: 120px;" class="text-white my-4">
-            <img style="height: 250px; width: 170px; margin: 10px 0;" class="card" src="${films[0].getPictureURL()}" alt="${films[0].getTitleFilm()}">
-            <p style="font-size: 11px; text-align: start;">${films[0].getRunTimeFilm()} -<span> ${films[0].getProducedIn()} -</span><span
-                    style="font-weight: bold;">${films[0].getDirectedBy()}</span></p>
+            <img style="height: 250px; width: 170px; margin: 10px 0;" class="card" src="${trendFilms[0].getPictureURL()}" alt="${trendFilms[0].getTitleFilm()}">
+            <p style="font-size: 11px; text-align: start;">${trendFilms[0].getRunTimeFilm()} -<span> ${trendFilms[0].getProducedIn()} -</span><span
+                    style="font-weight: bold;">${trendFilms[0].getDirectedBy()}</span></p>
             <p style="font-size: 11px; text-align: start;"><span class="text-success">92% Match </span><span
                     class="border rounded px-1 mx-2">TV - MA</span><span style="font-weight: bold;"
                                                                          class="border rounded px-1 mx-1 ">HD</span><span
-                    style='color:#fdb000; background: rgba(0, 0, 0, 0.6);' class="rounded border px-2 mx-1">${films[0].getRatingFilm()} <i
+                    style='color:#fdb000; background: rgba(0, 0, 0, 0.6);' class="rounded border px-2 mx-1">${trendFilms[0].getRatingFilm()} <i
                     class='bx bxs-star' style='color:#fdb000'></i></span></p>
-            <h4 style="text-align: start;">${films[0].titleFilm}</h4>
-            <p style="font-size: 15px; text-align: start;">${films[0].genreFilm}</p>
-            <p style="font-size: 10px; text-align: start;">${films[0].descriptionFilm}</p>
+            <h4 style="text-align: start;">${trendFilms[0].titleFilm}</h4>
+            <p style="font-size: 15px; text-align: start;">${trendFilms[0].genreFilm}</p>
+            <p style="font-size: 10px; text-align: start;">${trendFilms[0].descriptionFilm}</p>
             <div class="buttons text-light">
                 <button class="btn text-light mt-2">More details <i class='bx bxs-right-arrow'
                                                                     style='color:#ffffff'></i></button>
